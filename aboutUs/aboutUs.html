@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DAS – About Us</title>
+
+  <!-- ── Primary Meta Tags ── -->
+  <meta name="title" content="About Us | Delta American Schools" />
+  <meta name="description"
+    content="Learn about Delta American Schools' founders, faculty, Cognia accreditation, and our mission to deliver world-class education in Egypt." />
+  <meta name="keywords"
+    content="Delta American Schools, DAS, Mansoura, international school, Egypt, American curriculum" />
+  <meta name="author" content="Delta American Schools" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yourdomain.com/PAGE-URL" />
+
+  <!-- ── Open Graph (Facebook, WhatsApp, LinkedIn previews) ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com/PAGE-URL" />
+  <meta property="og:title" content="About Us | Delta American Schools" />
+  <meta property="og:description"
+    content="Learn about Delta American Schools' founders, faculty, Cognia accreditation, and our mission to deliver world-class education in Egypt." />
+  <meta property="og:image" content="https://yourdomain.com/pictures/Logos/logo.png" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="ar_EG" />
+  <meta property="og:site_name" content="Delta American Schools" />
+
+  <!-- ── Twitter Card ── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Us | Delta American Schools" />
+  <meta name="twitter:description"
+    content="Learn about Delta American Schools' founders, faculty, Cognia accreditation, and our mission to deliver world-class education in Egypt." />
+  <meta name="twitter:image" content="https://yourdomain.com/pictures/Logos/logo.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Links -->
+  <link rel="stylesheet" href="aboutUs.css" />
+  <script src="aboutUs.js" defer></script>
+  <script src="/i18n.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <!-- ═══════════════════════════════════════════
+             HEADER / MASTHEAD
+        ═══════════════════════════════════════════ -->
+    <header>
+      <div class="header-top-rule">
+        <hr />
+        <span id="header-date"></span>
+        <hr />
+      </div>
+      <div class="header-main">
+        <div class="parent-logo">
+          <img src="../pictures/Logos/logo.png" alt="Delta American Schools logo" />
+          <div class="logo-text">
+            <h1 data-i18n="logo.name">Delta American Schools</h1>
+            <p class="logo-tagline" data-i18n="logo.tagline">Est. 2011 · Mansoura, Egypt</p>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li><button id="home-btn" data-i18n="nav.home">Home</button></li>
+            <li><button id="admission-btn" data-i18n="nav.admission">Admission</button></li>
+            <li><button class="services-btn" data-i18n="nav.services">Services</button></li>
+            <li><button id="courses-btn" data-i18n="nav.courses">Courses</button></li>
+            <li><button id="news-btn" data-i18n="nav.news">News</button></li>
+            <li><button id="gallery-btn" data-i18n="nav.gallery">Gallery</button></li>
+            <li><button id="contactUs-btn" data-i18n="nav.contact">Contact</button></li>
+          </ul>
+        </nav>
+        <div class="parent-buttons">
+          <button id="lang-toggle" onclick="I18N.setLang(I18N.currentLang()==='en'?'ar':'en')">
+            <i class="fa-solid fa-globe"></i>
+          </button>
+          <button id="ai-chat-bot-btn">
+            <span data-i18n="nav.aiChat">AI Chat</span>
+          </button>
+        </div>
+        <div class="icon_vector"><span></span><span></span><span></span></div>
+      </div>
+      <div class="header-bottom-rule">
+        <hr />
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════
+               NAV OVERLAY (fullscreen mobile menu)
+          ═══════════════════════════════════════════ -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+      <div class="overlay-rule">
+        <hr /><span>Delta American Schools · Navigation</span>
+        <hr />
+      </div>
+      <ul class="overlay-nav">
+        <li><button data-url="../index.html" data-i18n="nav.home">Home</button></li>
+        <li><button data-url="../admission/admission.html" data-i18n="nav.admission">Admission</button></li>
+        <li><button data-url="../services/services.html" data-i18n="nav.services">Services</button></li>
+        <li><button data-url="../News/news.html" data-i18n="nav.news">News</button></li>
+        <li><button data-url="../Gallery/gallery.html" data-i18n="nav.gallery">Gallery</button></li>
+        <li class="nav-divider-item">
+          <div class="nav-divider"></div>
+        </li>
+        <li><button data-url="../index.html#contactUs" data-i18n="nav.contact">Contact Us</button></li>
+        <li><button data-url="../sendAdmissionPapers/pages/send-admission-papers.html"
+            data-i18n="nav.apply">Apply</button></li>
+        <li><button data-url="../SendTheVisitAppointment/Send-to-visit.html" data-i18n="nav.bookVisit">Book a
+            Visit</button></li>
+        <li class="nav-divider-item">
+          <div class="nav-divider"></div>
+        </li>
+        <li><button data-url="../courses/student-login.html" data-i18n="nav.courses">Courses</button></li>
+        <li><button data-url="../my-chatbot/public/chatbot.html" data-i18n="nav.aiChat">AI Chat</button></li>
+        <li>
+          <button id="lang-toggle" onclick="I18N.setLang(I18N.currentLang()==='en'?'ar':'en')">
+            <i class="fa-solid fa-globe"></i>
+          </button>
+        </li>
+      </ul>
+      <div class="overlay-footer">© Delta American Schools · Mansoura, Egypt</div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         PAGE MASTHEAD
+    ══════════════════════════════════════ -->
+    <section class="page-masthead">
+      <p class="page-kicker" data-i18n="logo.name">Delta American Schools</p>
+      <h1 class="page-headline"><span data-i18n="aboutPage.masthead.headline">About</span> <em
+          data-i18n="aboutPage.masthead.headlineEm">Us</em></h1>
+      <div class="masthead-rule">
+        <hr /><span data-i18n="aboutPage.masthead.rule">People · Journey · Excellence</span>
+        <hr />
+      </div>
+      <p class="page-deck" data-i18n="aboutPage.masthead.deck">
+        Meet the founders, faculty, and students who make Delta American Schools
+        one of Egypt's most distinguished educational institutions.
+      </p>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         FOUNDERS
+    ══════════════════════════════════════ -->
+    <section class="founders">
+      <div class="section-masthead">
+        <div class="section-rule">
+          <hr />
+        </div>
+        <h2 class="section-label" data-i18n="aboutPage.founders.title">Our Founders</h2>
+        <div class="section-rule">
+          <hr />
+        </div>
+      </div>
+
+      <div class="founders-grid">
+
+        <article class="founder-card featured-founder">
+          <div class="founder-img-wrap">
+            <img src="../pictures/Founders/Dr. Mohamed Rabie Nasser.png" alt="Dr. Mohamed Rabie Nasser" />
+          </div>
+          <div class="founder-body">
+            <p class="founder-role" data-i18n="aboutPage.founders.f1.role">Chairman, Board of Trustees</p>
+            <h2 class="founder-name" data-i18n="aboutPage.founders.f1.name">Dr. Mohamed Rabie Nasser</h2>
+            <div class="rule-thin"></div>
+            <p class="founder-bio drop-cap" data-i18n="aboutPage.founders.f1.bio">
+              Dr. Mohamed Rabie Nasser is a pioneer of private education in Egypt.
+              He serves as Chairman of the Board of Trustees at Delta University
+              for Science and Technology and is the founder of Delta Academy and
+              Sphinx and Nile Valley Universities. He is known for his initiatives
+              to support these efforts, most notably the Mohamed Rabie Award for
+              Scientific Research, which recognizes outstanding researchers in the
+              fields of medicine, technology, and artificial intelligence.
+            </p>
+          </div>
+        </article>
+
+        <article class="founder-card">
+          <div class="founder-img-wrap">
+            <img src="../pictures/Founders/AhmedAbuEl-Fotouh.png" alt="Dr. Ahmed Abu El-Fotouh" />
+          </div>
+          <div class="founder-body">
+            <p class="founder-role" data-i18n="aboutPage.founders.f2.role">Dean, Delta Higher Institute</p>
+            <h2 class="founder-name" data-i18n="aboutPage.founders.f2.name">Dr. Ahmed Abu El-Fotouh</h2>
+            <div class="rule-thin"></div>
+            <p class="founder-bio drop-cap" data-i18n="aboutPage.founders.f2.bio">
+              Dr. Ahmed Abu El-Fotouh is an academic professor and Dean of the
+              Delta Higher Institute for Computer Science and Management
+              Information Systems in Mansoura. He is a key educational leader in
+              the "Delta" group and is responsible for the technical and
+              administrative supervision of the institute's engineering departments
+              and the development of the scientific research system.
+            </p>
+          </div>
+        </article>
+
+        <article class="founder-card">
+          <div class="founder-img-wrap">
+            <img src="../pictures/Founders/Dr. Abdul Wahab Al-Ra'i.png" alt="Maj. Gen. Abdul Wahab Al-Ra'i" />
+          </div>
+          <div class="founder-body">
+            <p class="founder-role" data-i18n="aboutPage.founders.f3.role">Security Expert &amp; Senior Academic</p>
+            <h2 class="founder-name" data-i18n="aboutPage.founders.f3.name">Maj. Gen. Dr. Abdul Wahab Al-Ra'i</h2>
+            <div class="rule-thin"></div>
+            <p class="founder-bio drop-cap" data-i18n="aboutPage.founders.f3.bio">
+              Major General Dr. Abdul Wahab Al-Ra'i is a distinguished security
+              expert and academic with a 30-year career in the Ministry of
+              Interior, specializing in organized crime with a 99% conviction
+              rate. A recipient of the Presidential Medal of Excellence, he now
+              serves as a senior academic and vice-dean, and is a recognized
+              authority on intellectual security and legal legislation.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         TEAM — TEACHERS
+    ══════════════════════════════════════ -->
+    <section class="team">
+      <div class="section-masthead">
+        <div class="section-rule">
+          <hr />
+        </div>
+        <h2 class="section-label" data-i18n="aboutPage.faculty.title">Our Faculty</h2>
+        <div class="section-rule">
+          <hr />
+        </div>
+      </div>
+      <div class="team-intro">
+        <p class="section-kicker" data-i18n="aboutPage.faculty.kicker">Team</p>
+        <h2 class="section-headline" data-i18n="aboutPage.faculty.headline">Get Quality Education</h2>
+        <p class="section-deck" data-i18n="aboutPage.faculty.deck">
+          Our teachers are dedicated specialists committed to nurturing the potential
+          of every student. With their expertise and passion they create a supportive
+          and engaging learning environment.
+        </p>
+      </div>
+      <div class="people-grid">
+        <div class="person-card">
+          <div class="person-img-wrap">
+            <img src="../pictures/teamTeachers/Eman.png" alt="Ms. Eman Nour" />
+          </div>
+          <div class="person-body">
+            <h3 data-i18n="aboutPage.faculty.e1.name">Ms. Eman Nour</h3>
+            <span data-i18n="aboutPage.faculty.e1.role">Humanities Department</span>
+          </div>
+        </div>
+        <div class="person-card">
+          <div class="person-img-wrap">
+            <img src="../pictures/teamTeachers/Mona.png" alt="Ms. Mona Elghobary" />
+          </div>
+          <div class="person-body">
+            <h3 data-i18n="aboutPage.faculty.e2.name">Ms. Mona Elghobary</h3>
+            <span data-i18n="aboutPage.faculty.e2.role">P.E Department</span>
+          </div>
+        </div>
+        <div class="person-card">
+          <div class="person-img-wrap">
+            <img src="../pictures/teamTeachers/Haidy.png" alt="Ms. Haidy Elkazaz" />
+          </div>
+          <div class="person-body">
+            <h3 data-i18n="aboutPage.faculty.e3.name">Ms. Haidy Elkazaz</h3>
+            <span data-i18n="aboutPage.faculty.e3.role">French Department</span>
+          </div>
+        </div>
+        <div class="person-card">
+          <div class="person-img-wrap">
+            <img src="../pictures/teamTeachers/Taghreed.png" alt="Ms. Taghreed Reda" />
+          </div>
+          <div class="person-body">
+            <h3 data-i18n="aboutPage.faculty.e4.name">Ms. Taghreed Reda</h3>
+            <span data-i18n="aboutPage.faculty.e4.role">Art Department</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+            supervision Team — Faculty members
+        ══════════════════════════════════════ -->
+    <section class="supervisionTeam">
+      <div class="section-masthead">
+        <div class="section-rule">
+          <hr />
+        </div>
+        <h2 class="section-label" data-i18n="aboutPage.supervisionTeam.title">Supervision Team</h2>
+        <div class="section-rule">
+          <hr />
+        </div>
+      </div>
+      <div class="team-intro">
+        <p class="section-kicker" data-i18n="aboutPage.supervisionTeam.kicker">Faculty members</p>
+        <h2 class="section-headline" data-i18n="aboutPage.supervisionTeam.headline">Get High Quality Supervision</h2>
+        <p class="section-deck" data-i18n="aboutPage.supervisionTeam.deck">
+          These two individuals were instrumental in leading a team of 20 people to bring this
+          graduation project and website tolife in the best possible way.
+        </p>
+      </div>
+      <div class="people-grid five-col">
+        <div class="person-card">
+          <div class="person-img-wrap">
+            <img src="../pictures/SupervisionTeam/Engi.jpeg" alt="Angie Siam" />
+          </div>
+          <div class="person-body">
+            <h3 data-i18n="aboutPage.supervisionTeam.g1.name">Angie Siam</h3>
+            <span data-i18n="aboutPage.supervisionTeam.g1.role">Engineer</span>
+          </div>
+        </div>
+        <div class="person-card">
+          <div class="person-img-wrap">
+            <img src="../pictures/SupervisionTeam/Mahmoud.jpeg" alt="Mahmoud Khaled" />
+          </div>
+          <div class="person-body">
+            <h3 data-i18n="aboutPage.supervisionTeam.g2.name">Mahmoud Khaled</h3>
+            <span data-i18n="aboutPage.supervisionTeam.g2.role">Engineer</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         TEAM — GRADUATION PROJECT
+    ══════════════════════════════════════ -->
+    <section class="teamMembers">
+      <div class="section-masthead">
+        <div class="section-rule">
+          <hr />
+        </div>
+        <h2 class="section-label" data-i18n="aboutPage.graduationTeam.title">Graduation Project Team</h2>
+        <div class="section-rule">
+          <hr />
+        </div>
+      </div>
+      <div class="team-intro">
+        <p class="section-kicker" data-i18n="aboutPage.graduationTeam.kicker">Graduation Project Team</p>
+        <h2 class="section-headline" data-i18n="aboutPage.graduationTeam.headline">Get a Quality Website</h2>
+        <p class="section-deck" data-i18n="aboutPage.graduationTeam.deck">
+          These are the people who made this website possible — programmers,
+          data analysts, and designers. These are some of our best students.
+        </p>
+      </div>
+      <div class="people-grid five-col">
+        <div class="person-card">
+          <div class="person-img-wrap">
+            <img src="../pictures/TeamMembers/Ali-Mohamed.jpg" alt="Ali Mohamed" />
+          </div>
+          <div class="person-body">
+            <h3 data-i18n="aboutPage.graduationTeam.g1.name">Ali Mohamed</h3>
+            <span data-i18n="aboutPage.graduationTeam.g1.role">Photoshop Specialist</span>
+          </div>
+        </div>
+        <div class="person-card">
+          <div class="person-img-wrap">
+            <img src="../pictures/TeamMembers/Mohamed-Yaser.jpg" alt="Mohamed Yaser" />
+          </div>
+          <div class="person-body">
+            <h3 data-i18n="aboutPage.graduationTeam.g2.name">Mohamed Yaser</h3>
+            <span data-i18n="aboutPage.graduationTeam.g2.role">Data Analysis</span>
+          </div>
+        </div>
+        <div class="person-card featured-person">
+          <div class="person-img-wrap">
+            <img src="../pictures/TeamMembers/my_photo.jpg" alt="Mohamed Mahmoud" />
+          </div>
+          <div class="person-body">
+            <h3 data-i18n="aboutPage.graduationTeam.g3.name">Mohamed Mahmoud</h3>
+            <span data-i18n="aboutPage.graduationTeam.g3.role">Software Engineering</span>
+          </div>
+        </div>
+        <div class="person-card">
+          <div class="person-img-wrap">
+            <img src="../pictures/TeamMembers/Mohamed-Naser.png" alt="Mohamed Naser" />
+          </div>
+          <div class="person-body">
+            <h3 data-i18n="aboutPage.graduationTeam.g4.name">Mohamed Naser</h3>
+            <span data-i18n="aboutPage.graduationTeam.g4.role">Software Engineering</span>
+          </div>
+        </div>
+        <div class="person-card">
+          <div class="person-img-wrap">
+            <img src="../pictures/TeamMembers/Mahmoud-Elnagar.png" alt="Mahmoud Al-Najjar" />
+          </div>
+          <div class="person-body">
+            <h3 data-i18n="aboutPage.graduationTeam.g5.name">Mahmoud Al-Najjar</h3>
+            <span data-i18n="aboutPage.graduationTeam.g5.role">Data Analysis</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         TIMELINE
+    ══════════════════════════════════════ -->
+    <section class="timeline">
+      <div class="section-masthead">
+        <div class="section-rule">
+          <hr />
+        </div>
+        <h2 class="section-label" data-i18n="aboutPage.timeline.title">Our Journey</h2>
+        <div class="section-rule">
+          <hr />
+        </div>
+      </div>
+      <div class="team-intro">
+        <p class="section-kicker" data-i18n="aboutPage.timeline.kicker">Timeline</p>
+        <h2 class="section-headline" data-i18n="aboutPage.timeline.headline">Milestones &amp; Achievements</h2>
+        <p class="section-deck" data-i18n="aboutPage.timeline.deck">
+          Our journey began with a vision to provide quality education and has
+          evolved into a comprehensive platform that connects students, teachers,
+          and parents.
+        </p>
+      </div>
+
+      <div class="parent-timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2011</div>
+          <div class="timeline-content">
+            <h3 data-i18n="aboutPage.timeline.y2011.title">Foundation</h3>
+            <p data-i18n="aboutPage.timeline.y2011.body">
+              Delta American School (DAS) was established in Mansoura, and is part of the Delta Educational Group. It
+              began providing its distinguished educational services in <span>2011</span>. But The parent educational
+              group was established in <span>1998.</span>
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2013</div>
+          <div class="timeline-content">
+            <h3 data-i18n="aboutPage.timeline.y2013.title">International Accreditation</h3>
+            <p data-i18n="aboutPage.timeline.y2013.body">Received full accreditation from <span>Cognia</span>, a
+              globally recognized education quality body.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2022</div>
+          <div class="timeline-content">
+            <h3 data-i18n="aboutPage.timeline.y2022.title">World Record</h3>
+            <p data-i18n="aboutPage.timeline.y2022.body">Entered the <span>Guinness</span> Book of World Records — a
+              historic milestone for the school.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2023</div>
+          <div class="timeline-content">
+            <h3 data-i18n="aboutPage.timeline.y2023.title">Top Academic Scores</h3>
+            <p data-i18n="aboutPage.timeline.y2023.body">Students achieved top scores in the <span>ACT</span> and
+              <span>SAT</span> international examinations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+             FOOTER
+        ═══════════════════════════════════════════ -->
+    <footer>
+      <div class="footer-masthead">
+        <hr class="footer-rule-top" />
+        <h2 class="footer-title" data-i18n="logo.name">Delta American Schools</h2>
+        <p class="footer-tagline" data-i18n="footer.tagline">
+          Est. 2011 · Excellence in Education · Mansoura, Egypt
+        </p>
+        <hr class="footer-rule-bottom" />
+      </div>
+      <section class="upper-section">
+        <div class="column">
+          <h4 data-i18n="footer.col1.title">Company Info</h4>
+          <ul>
+            <li><button id="aboutBtnFooter" data-i18n="nav.aboutUs">About Us</button></li>
+            <li><button id="servicesBtnFooter" data-i18n="nav.services">Services</button></li>
+            <li><button id="hiringBtnFooter" data-i18n="footer.col1.hiring">We Are Hiring</button></li>
+            <li><button id="socialMediaBtnFooter" data-i18n="footer.col1.social">Social Media</button></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4 data-i18n="footer.col2.title">Admins</h4>
+          <ul>
+            <li><button id="adminToPostStudioBtn" data-i18n="footer.col2.newsStudio">Studio News</button></li>
+            <li><button id="adminToCourseStudioBtn" data-i18n="footer.col2.courseStudio">Studio Courses</button></li>
+            <li><button title="Soooon" data-i18n="footer.col2.dashboard">DashBoard</button></li>
+            <li><button title="Soooon" data-i18n="footer.col2.customize">Customize</button></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4 data-i18n="footer.col3.title">Features</h4>
+          <ul>
+            <li><button id="aiBtnFooter" data-i18n="footer.col3.ai">AI Assistant</button></li>
+            <li><button id="SubmitDocumentsBtnFooter" data-i18n="footer.col3.submit">Submit Documents</button></li>
+            <li><button id="VisitBtnFooter" data-i18n="footer.col3.visit">Book School Visit</button></li>
+            <li><button id="CoursesBtnFooter" data-i18n="footer.col3.courses">Courses Page</button></li>
+          </ul>
+        </div>
+        <div class="contact">
+          <h4 data-i18n="contact.getInTouch">Get In Touch</h4>
+          <ul>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <button id="numberOneBtnFooter">+201090700727</button>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <button id="MailBtnFooter">info@delta.edu.eg</button>
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <button id="locationBtnFooter" data-i18n="footer.address">Delta Academy, Highway Mansoura–Damietta,
+                Dakahlia EG.</button>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <div class="lower-section">
+        <p>
+          © <span id="footer-year"></span> <span data-i18n="logo.name">Delta American Schools</span> · <span
+            data-i18n="footer.rights">All Rights
+            Reserved</span>
+        </p>
+      </div>
+    </footer>
+  </main>
+</body>
+
+</html>

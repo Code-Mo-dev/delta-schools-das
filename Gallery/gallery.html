@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery – Delta American Schools</title>
+    
+    <!-- ── Primary Meta Tags ── -->
+    <meta name="title" content="Gallery | Delta American Schools" />
+    <meta name="description" content="Browse photos from school events, student activities, campus life, and special occasions at Delta American Schools, Mansoura." />
+    <meta name="keywords"
+      content="Delta American Schools, DAS, Mansoura, international school, Egypt, American curriculum" />
+    <meta name="author" content="Delta American Schools" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://yourdomain.com/PAGE-URL" />
+    
+    <!-- ── Open Graph (Facebook, WhatsApp, LinkedIn previews) ── -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourdomain.com/PAGE-URL" />
+    <meta property="og:title" content="Gallery | Delta American Schools" />
+    <meta property="og:description" content="Browse photos from school events, student activities, campus life, and special occasions at Delta American Schools, Mansoura." />
+    <meta property="og:image" content="https://yourdomain.com/pictures/Logos/logo.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ar_EG" />
+    <meta property="og:site_name" content="Delta American Schools" />
+    
+    <!-- ── Twitter Card ── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Gallery | Delta American Schools" />
+    <meta name="twitter:description" content="Browse photos from school events, student activities, campus life, and special occasions at Delta American Schools, Mansoura." />
+    <meta name="twitter:image" content="https://yourdomain.com/pictures/Logos/logo.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Fancybox -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+    />
+    <!-- Custom CSS & JS & i18n-->
+    <link rel="stylesheet" href="gallery.css" />
+    <script src="gallery.js" defer></script>
+    <script src="/i18n.js" defer></script>
+  </head>
+  <body>
+    <main>
+    <!-- ═══════════════════════════════════════════
+             HEADER / MASTHEAD
+        ═══════════════════════════════════════════ -->
+    <header>
+      <div class="header-top-rule">
+        <hr />
+        <span id="header-date"></span>
+        <hr />
+      </div>
+      <div class="header-main">
+        <div class="parent-logo">
+          <img src="../pictures/Logos/logo.png" alt="Delta American Schools logo" />
+          <div class="logo-text">
+            <h1 data-i18n="logo.name">Delta American Schools</h1>
+            <p class="logo-tagline" data-i18n="logo.tagline">Est. 2011 · Mansoura, Egypt</p>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li><button id="home-btn" data-i18n="nav.home">Home</button></li>
+            <li><button id="aboutUs-btn" data-i18n="nav.aboutUs">About Us</button></li>
+            <li><button id="services-btn" data-i18n="nav.services">Services</button></li>
+            <li><button id="courses-btn" data-i18n="nav.courses">Courses</button></li>
+            <li><button id="news-btn" data-i18n="nav.news">News</button></li>
+            <li><button id="admission-btn" data-i18n="nav.admission">Admission</button></li>
+            <li><button id="contactUs-btn" data-i18n="nav.contact">Contact</button></li>
+          </ul>
+        </nav>
+        <div class="parent-buttons">
+          <button id="lang-toggle" onclick="I18N.setLang(I18N.currentLang()==='en'?'ar':'en')">
+            <i class="fa-solid fa-globe"></i>
+          </button>
+          <button id="ai-chat-bot-btn">
+            <span data-i18n="nav.aiChat">AI Chat</span> <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+        <div class="icon_vector"><span></span><span></span><span></span></div>
+      </div>
+      <div class="header-bottom-rule">
+        <hr />
+      </div>
+    </header>
+    <!-- ═══════════════════════════════════════════
+               NAV OVERLAY (fullscreen mobile menu)
+          ═══════════════════════════════════════════ -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+      <div class="overlay-rule">
+        <hr /><span data-i18n="galleryPage.overlayRule">Delta American Schools · Navigation</span>
+        <hr />
+      </div>
+      <ul class="overlay-nav">
+        <li><button data-url="../index.html" data-i18n="nav.home">Home</button></li>
+        <li><button data-url="../aboutUs/aboutUs.html" data-i18n="nav.aboutUs">About Us</button></li>
+        <li><button data-url="../services/services.html" data-i18n="nav.services">Services</button></li>
+        <li><button data-url="../News/news.html" data-i18n="nav.news">News</button></li>
+        <li class="nav-divider-item">
+          <div class="nav-divider"></div>
+        </li>
+        <li><button data-url="../admission/admission.html" data-i18n="nav.admission">Admission</button></li>
+        <li><button data-url="../sendAdmissionPapers/pages/send-admission-papers.html" data-i18n="nav.apply">Apply</button></li>
+        <li><button data-url="../SendTheVisitAppointment/Send-to-visit.html" data-i18n="nav.bookVisit">Book a Visit</button></li>
+        <li class="nav-divider-item">
+          <div class="nav-divider"></div>
+        </li>
+        <li><button data-url="../courses/student-login.html" data-i18n="nav.courses">Courses</button></li>
+        <li><button data-url="../my-chatbot/public/chatbot.html" data-i18n="nav.aiChat">AI Chat</button></li>
+        <li>
+          <button id="lang-toggle" onclick="I18N.setLang(I18N.currentLang()==='en'?'ar':'en')">
+            <i class="fa-solid fa-globe"></i>
+          </button>
+        </li>
+      </ul>
+      <div class="overlay-footer" data-i18n="galleryPage.overlayFooter">© Delta American Schools · Mansoura, Egypt</div>
+    </div>
+
+      <!-- ══════════════════════════════════════
+         PAGE MASTHEAD
+    ══════════════════════════════════════ -->
+      <div class="page-masthead">
+        <p class="page-kicker" data-i18n="galleryPage.kicker">Delta American Schools</p>
+        <h1 class="page-headline"><span data-i18n="galleryPage.headline">Our</span> <em data-i18n="galleryPage.headlineEm">Gallery</em></h1>
+        <div class="masthead-rule">
+          <hr />
+          <span data-i18n="galleryPage.rule">Campus · Activities · Moments · Memories</span>
+          <hr />
+        </div>
+        <p class="page-deck" data-i18n="galleryPage.deck">
+          A visual chronicle of life at Delta American Schools — student
+          activities, campus events, and the moments that define us.
+        </p>
+      </div>
+
+      <!-- ══════════════════════════════════════
+         GALLERY GRID
+    ══════════════════════════════════════ -->
+      <section class="gallery-section">
+        <div class="section-masthead">
+          <div class="s-rule"><hr /></div>
+          <span class="section-label" data-i18n="galleryPage.sectionLabel">School Life in Pictures</span>
+          <div class="s-rule"><hr /></div>
+        </div>
+
+        <div class="gallery-grid">
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery1.webp"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery1.webp"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery2.webp"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery2.webp"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery3.jpg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery3.jpg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery4.webp"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery4.webp"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery5.webp"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery5.webp"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery6.webp"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery6.webp"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery7.jpg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery7.jpg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery8.jpg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery8.jpg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery9.jpg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery9.jpg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery10.png"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery10.png"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery11.jpg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery11.jpg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery12.jpg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery12.jpg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery13.jpeg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery13.jpeg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery39.jpg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery39.jpg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery38.jpg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery38.jpg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery16.jpeg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery16.jpeg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery33.jpeg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery33.jpeg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery34.jpeg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery34.jpeg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery35.jpeg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery35.jpeg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery30.jpeg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery30.jpeg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery17.jpeg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery17.jpeg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery18.jpeg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery18.jpeg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery19.jpeg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery19.jpeg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery20.jpeg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery20.jpeg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery21.jpeg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery21.jpeg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery22.jpeg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery22.jpeg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery23.jpeg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery23.jpeg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery24.jpeg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery24.jpeg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery25.jpeg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery25.jpeg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery15.jpeg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery15.jpeg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery26.jpeg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery26.jpeg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery27.jpeg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery27.jpeg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery29.jpeg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery29.jpeg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery31.jpeg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery31.jpeg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+
+          <a
+            class="gal-item"
+            data-fancybox="school-gallery"
+            href="../pictures/Gallery/gallery32.jpeg"
+            data-caption="Student Activities"
+          >
+            <img
+              src="../pictures/Gallery/gallery32.jpeg"
+              alt="Student Activities"
+            />
+            <div class="gal-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════
+         FOOTER
+    ══════════════════════════════════════ -->
+    <footer>
+      <div class="footer-masthead">
+        <hr class="footer-rule-top" />
+        <h2 class="footer-title" data-i18n="footer.title">Delta American Schools</h2>
+        <p class="footer-tagline" data-i18n="footer.tagline">
+          Est. 2011 · Excellence in Education · Mansoura, Egypt
+        </p>
+        <hr class="footer-rule-bottom" />
+      </div>
+      <section class="upper-section">
+        <div class="column">
+          <h4 data-i18n="footer.col1.title">Company Info</h4>
+          <ul>
+            <li><button id="aboutBtnFooter" data-i18n="nav.aboutUs">About Us</button></li>
+            <li><button id="servicesBtnFooter" data-i18n="nav.services">Services</button></li>
+            <li><button id="hiringBtnFooter" data-i18n="footer.col1.hiring">We Are Hiring</button></li>
+            <li><button id="socialMediaBtnFooter" data-i18n="footer.col1.social">Social Media</button></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4 data-i18n="footer.col2.title">Admins</h4>
+          <ul>
+            <li><button id="adminToPostStudioBtn" data-i18n="footer.col2.newsStudio">Studio News</button></li>
+            <li><button id="adminToCourseStudioBtn" data-i18n="footer.col2.courseStudio">Studio Courses</button></li>
+            <li><button title="Soooon" data-i18n="footer.col2.dashboard">DashBoard</button></li>
+            <li><button title="Soooon" data-i18n="footer.col2.customize">Customize</button></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4 data-i18n="footer.col3.title">Features</h4>
+          <ul>
+            <li><button id="aiBtnFooter" data-i18n="footer.col3.ai">AI Assistant</button></li>
+            <li><button id="SubmitDocumentsBtnFooter" data-i18n="footer.col3.submit">Submit Documents</button></li>
+            <li><button id="VisitBtnFooter" data-i18n="footer.col3.visit">Book School Visit</button></li>
+            <li><button id="CoursesBtnFooter" data-i18n="footer.col3.courses">Courses Page</button></li>
+          </ul>
+        </div>
+        <div class="contact">
+          <h4 data-i18n="contact.getInTouch">Get In Touch</h4>
+          <ul>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <button id="numberOneBtnFooter">+201090700727</button>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <button id="MailBtnFooter">info@delta.edu.eg</button>
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <button id="locationBtnFooter" data-i18n="footer.address">Delta Academy, Highway Mansoura–Damietta, Dakahlia EG.</button>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <div class="lower-section">
+        <p>
+          © <span id="footer-year"></span> <span data-i18n="footer.copyright">Delta American Schools · All Rights Reserved</span>
+        </p>
+      </div>
+    </footer>    
+  </main>
+
+    <!--! Fancybox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+  </body>
+</html>

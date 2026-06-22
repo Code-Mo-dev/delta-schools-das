@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services – Delta American Schools</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="services.css" />
+  <script src="services.js" defer></script>
+  <script src="../i18n.js" defer></script>
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════
+       HEADER
+  ══════════════════════════════════════ -->
+  <header>
+    <div class="header-top-rule">
+      <hr />
+      <span id="header-date"></span>
+      <hr />
+    </div>
+    <div class="header-main">
+      <div class="parent-logo">
+        <img src="../pictures/Logos/logo.png" alt="Delta American Schools logo" />
+        <div class="logo-text">
+          <h1 data-i18n="logo.name">Delta American Schools</h1>
+          <p class="logo-tagline" data-i18n="logo.tagline">Est. 2011 · Mansoura, Egypt</p>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><button id="home-btn" data-i18n="nav.home">Home</button></li>
+          <li><button id="aboutUs-btn" data-i18n="nav.aboutUs">About Us</button></li>
+          <li><button id="courses-btn" data-i18n="nav.courses">Courses</button></li>
+          <li><button id="admission-btn" data-i18n="nav.admission">Admission</button></li>
+          <li><button id="news-btn" data-i18n="nav.news">News</button></li>
+          <li><button id="gallery-btn" data-i18n="nav.gallery">Gallery</button></li>
+          <li><button id="contactUs-btn" data-i18n="nav.contact">Contact</button></li>
+        </ul>
+      </nav>
+      <div class="parent-buttons">
+        <button id="lang-toggle" onclick="I18N.setLang(I18N.currentLang()==='en'?'ar':'en')">
+          <i class="fa-solid fa-globe"></i> عربي
+        </button>
+        <button id="ai-chat-bot-btn" data-i18n="nav.aiChat">
+          AI Chat <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+      <div class="icon_vector"><span></span><span></span><span></span></div>
+    </div>
+    <div class="header-bottom-rule">
+      <hr />
+    </div>
+  </header>
+  <!-- ═══════════════════════════════════════════
+               NAV OVERLAY (fullscreen mobile menu)
+          ═══════════════════════════════════════════ -->
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+    <div class="overlay-rule">
+      <hr /><span>Delta American Schools · Navigation</span>
+      <hr />
+    </div>
+    <ul class="overlay-nav">
+      <li><button data-url="../index.html" data-i18n="nav.home">Home</button></li>
+      <li><button data-url="../aboutUs/aboutUs.html" data-i18n="nav.aboutUs">About Us</button></li>
+      <li><button data-url="../News/news.html" data-i18n="nav.news">News</button></li>
+      <li><button data-url="../Gallery/gallery.html" data-i18n="nav.gallery">Gallery</button></li>
+      <li class="nav-divider-item">
+        <div class="nav-divider"></div>
+      </li>
+      <li><button data-url="../admission/admission.html" data-i18n="nav.admission">Admission</button></li>
+      <li><button data-url="../sendAdmissionPapers/pages/send-admission-papers.html"
+          data-i18n="nav.apply">Apply</button></li>
+      <li><button data-url="../SendTheVisitAppointment/Send-to-visit.html" data-i18n="nav.bookVisit">Book a
+          Visit</button></li>
+      <li class="nav-divider-item">
+        <div class="nav-divider"></div>
+      </li>
+      <li><button data-url="../courses/student-login.html" data-i18n="nav.courses">Courses</button></li>
+      <li><button data-url="../my-chatbot/public/chatbot.html" data-i18n="nav.aiChat">AI Chat</button></li>
+      <li>
+        <button id="lang-toggle" onclick="I18N.setLang(I18N.currentLang()==='en'?'ar':'en')">
+          <i class="fa-solid fa-globe"></i>
+        </button>
+      </li>
+
+    </ul>
+    <div class="overlay-footer">© Delta American Schools · Mansoura, Egypt</div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       PAGE MASTHEAD
+  ══════════════════════════════════════ -->
+  <div class="page-masthead">
+    <p class="page-kicker" data-i18n="logo.name">Delta American Schools</p>
+    <h1 class="page-headline"><span data-i18n="servicesPage.masthead.headline">Our</span> <em
+        data-i18n="servicesPage.masthead.headlineEm">Services</em></h1>
+    <div class="masthead-rule">
+      <hr /><span data-i18n="servicesPage.masthead.rule">Application · Support · Campus · AI</span>
+      <hr />
+    </div>
+    <p class="page-deck" data-i18n="servicesPage.masthead.deck">
+      Choose the service that suits you — whether you want to apply, use the smart assistant,
+      communicate with the school, or book an appointment to visit the campus.
+    </p>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       SERVICES GRID
+  ══════════════════════════════════════ -->
+  <section class="services-section">
+    <div class="section-masthead">
+      <div class="s-rule">
+        <hr />
+      </div>
+      <span class="section-label" data-i18n="servicesPage.sectionLabel">What We Offer</span>
+      <div class="s-rule">
+        <hr />
+      </div>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- Card 1: Document Submission -->
+      <article class="service-card featured">
+        <div class="card-band">
+          <div class="card-band-tag">
+            <i class="fa-regular fa-folder-open"></i> <span data-i18n="servicesPage.c1.tag">Application</span>
+          </div>
+          <i class="fa-solid fa-file-signature main-icon"></i>
+          <p class="card-band-label" data-i18n="servicesPage.c1.bandLabel">Submit Required Documents</p>
+        </div>
+        <div class="card-body">
+          <p class="card-category" data-i18n="servicesPage.c1.category">Admissions</p>
+          <hr class="card-rule" />
+          <p class="card-desc" data-i18n="servicesPage.c1.desc">
+            Upload the required documents and complete your application data electronically in an organized way, with
+            step-by-step tracking of your request status.
+          </p>
+        </div>
+        <div class="card-footer">
+          <a href="../sendAdmissionPapers/pages/send-admission-papers.html" class="card-link">
+            <span data-i18n="servicesPage.c1.link">Go to Application</span> <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 2: AI Assistant -->
+      <article class="service-card">
+        <div class="card-band">
+          <div class="card-band-tag">
+            <i class="fa-solid fa-robot"></i> <span data-i18n="servicesPage.c2.tag">AI</span>
+          </div>
+          <i class="fa-solid fa-brain main-icon"></i>
+          <p class="card-band-label" data-i18n="servicesPage.c2.bandLabel">AI Assistant</p>
+        </div>
+        <div class="card-body">
+          <p class="card-category" data-i18n="servicesPage.c2.category">Smart Support</p>
+          <hr class="card-rule" />
+          <p class="card-desc" data-i18n="servicesPage.c2.desc">
+            Get instant answers to your questions about the school, regulations, curriculum, and fees through a smart
+            assistant available to you 24/7.
+          </p>
+        </div>
+        <div class="card-footer">
+          <a href="../my-chatbot/public/chatbot.html" class="card-link">
+            <span data-i18n="servicesPage.c2.link">Try AI Assistant</span> <i
+              class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 3: Communication -->
+      <article class="service-card">
+        <div class="card-band">
+          <div class="card-band-tag">
+            <i class="fa-regular fa-message"></i> <span data-i18n="servicesPage.c3.tag">Direct Contact</span>
+          </div>
+          <i class="fa-solid fa-headset main-icon"></i>
+          <p class="card-band-label" data-i18n="servicesPage.c3.bandLabel">Communication with Schools</p>
+        </div>
+        <div class="card-body">
+          <p class="card-category" data-i18n="servicesPage.c3.category">Contact & Support</p>
+          <hr class="card-rule" />
+          <p class="card-desc" data-i18n="servicesPage.c3.desc">
+            Easily contact the admissions team or parent services, and get reliable official answers from school
+            management.
+          </p>
+        </div>
+        <div class="card-footer">
+          <a href="../index.html#contactUs" class="card-link">
+            <span data-i18n="servicesPage.c3.link">Go to Contact</span> <i class="fa-solid fa-envelope-open-text"></i>
+          </a>
+        </div>
+      </article>
+
+      <!-- Card 4: Book Visit -->
+      <article class="service-card">
+        <div class="card-band">
+          <div class="card-band-tag">
+            <i class="fa-regular fa-calendar-check"></i> <span data-i18n="servicesPage.c4.tag">Book Appointment</span>
+          </div>
+          <i class="fa-solid fa-school-flag main-icon"></i>
+          <p class="card-band-label" data-i18n="servicesPage.c4.bandLabel">Book School Visit</p>
+        </div>
+        <div class="card-body">
+          <p class="card-category" data-i18n="servicesPage.c4.category">Campus Visit</p>
+          <hr class="card-rule" />
+          <p class="card-desc" data-i18n="servicesPage.c4.desc">
+            Choose the appropriate day and time to visit Delta American Schools and get to know the classrooms,
+            activities, and educational environment up close.
+          </p>
+        </div>
+        <div class="card-footer">
+          <a href="../SendTheVisitAppointment/Send-to-visit.html" class="card-link">
+            <span data-i18n="servicesPage.c4.link">Book Visit</span> <i class="fa-solid fa-location-dot"></i>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+             FOOTER
+        ═══════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-masthead">
+      <hr class="footer-rule-top" />
+      <h2 class="footer-title" data-i18n="logo.name">Delta American Schools</h2>
+      <p class="footer-tagline" data-i18n="footer.tagline">
+        Est. 2011 · Excellence in Education · Mansoura, Egypt
+      </p>
+      <hr class="footer-rule-bottom" />
+    </div>
+    <section class="upper-section">
+      <div class="column">
+        <h4 data-i18n="footer.col1.title">Company Info</h4>
+        <ul>
+          <li><button id="aboutBtnFooter" data-i18n="nav.aboutUs">About Us</button></li>
+          <li><button id="servicesBtnFooter" data-i18n="nav.services">Services</button></li>
+          <li><button id="hiringBtnFooter" data-i18n="footer.col1.hiring">We Are Hiring</button></li>
+          <li><button id="socialMediaBtnFooter" data-i18n="footer.col1.social">Social Media</button></li>
+        </ul>
+      </div>
+      <div class="column">
+        <h4 data-i18n="footer.col2.title">Admins</h4>
+        <ul>
+          <li><button id="adminToPostStudioBtn" data-i18n="footer.col2.newsStudio">Studio News</button></li>
+          <li><button id="adminToCourseStudioBtn" data-i18n="footer.col2.courseStudio">Studio Courses</button></li>
+          <li><button title="Soooon" data-i18n="footer.col2.dashboard">DashBoard</button></li>
+          <li><button title="Soooon" data-i18n="footer.col2.customize">Customize</button></li>
+        </ul>
+      </div>
+      <div class="column">
+        <h4 data-i18n="footer.col3.title">Features</h4>
+        <ul>
+          <li><button id="aiBtnFooter" data-i18n="footer.col3.ai">AI Assistant</button></li>
+          <li><button id="SubmitDocumentsBtnFooter" data-i18n="footer.col3.submit">Submit Documents</button></li>
+          <li><button id="VisitBtnFooter" data-i18n="footer.col3.visit">Book School Visit</button></li>
+          <li><button id="CoursesBtnFooter" data-i18n="footer.col3.courses">Courses Page</button></li>
+        </ul>
+      </div>
+      <div class="contact">
+        <h4 data-i18n="contact.getInTouch">Get In Touch</h4>
+        <ul>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <button id="numberOneBtnFooter">+201090700727</button>
+          </li>
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            <button id="MailBtnFooter">info@delta.edu.eg</button>
+          </li>
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <button id="locationBtnFooter" data-i18n="footer.address">Delta Academy, Highway Mansoura–Damietta,
+              Dakahlia EG.</button>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <div class="lower-section">
+      <p>
+        © <span id="footer-year"></span> Delta American Schools · All Rights
+        Reserved
+      </p>
+    </div>
+  </footer>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admission – Delta American Schools</title>
+
+<!-- ── Primary Meta Tags ── -->
+<meta name="title" content="Admission | Delta American Schools" />
+<meta name="description" content="Explore admission requirements, academic levels, and tuition fees for Delta American Schools. Applications open every February." />
+<meta name="keywords"
+  content="Delta American Schools, DAS, Mansoura, international school, Egypt, American curriculum" />
+<meta name="author" content="Delta American Schools" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://yourdomain.com/PAGE-URL" />
+
+<!-- ── Open Graph (Facebook, WhatsApp, LinkedIn previews) ── -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yourdomain.com/PAGE-URL" />
+<meta property="og:title" content="Admission | Delta American Schools" />
+<meta property="og:description" content="Explore admission requirements, academic levels, and tuition fees for Delta American Schools. Applications open every February." />
+<meta property="og:image" content="https://yourdomain.com/pictures/Logos/logo.png" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="ar_EG" />
+<meta property="og:site_name" content="Delta American Schools" />
+
+<!-- ── Twitter Card ── -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Admission | Delta American Schools" />
+<meta name="twitter:description" content="Explore admission requirements, academic levels, and tuition fees for Delta American Schools. Applications open every February." />
+<meta name="twitter:image" content="https://yourdomain.com/pictures/Logos/logo.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="admission.css" />
+  <script src="admission.js" defer></script>
+  <script src="../i18n.js" defer></script>
+</head>
+<body>
+  <main>
+
+    <!-- ══════════════════════════════════════
+         HEADER
+    ══════════════════════════════════════ -->
+    <header>
+      <div class="header-top-rule">
+        <hr />
+        <span id="header-date"></span>
+        <hr />
+      </div>
+      <div class="header-main">
+        <div class="parent-logo">
+          <img src="../pictures/Logos/logo.png" alt="Delta American Schools logo" />
+          <div class="logo-text">
+            <h1 data-i18n="logo.name">Delta American Schools</h1>
+            <p class="logo-tagline" data-i18n="logo.tagline">Est. 2011 · Mansoura, Egypt</p>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li><button id="home-btn" data-i18n="nav.home">Home</button></li>
+            <li><button id="aboutUs-btn" data-i18n="nav.aboutUs">About Us</button></li>
+            <li><button class="services-btn" data-i18n="nav.services">Services</button></li>
+            <li><button id="courses-btn" data-i18n="nav.courses">Courses</button></li>
+            <li><button id="news-btn" data-i18n="nav.news">News</button></li>
+            <li><button id="gallery-btn" data-i18n="nav.gallery">Gallery</button></li>
+            <li><button id="contactUs-btn" data-i18n="nav.contact">Contact</button></li>
+          </ul>
+        </nav>
+        <div class="parent-buttons">
+          <button id="lang-toggle" onclick="I18N.setLang(I18N.currentLang()==='en'?'ar':'en')">
+            <i class="fa-solid fa-globe"></i> عربي
+          </button>
+          <button id="ai-chat-bot-btn" data-i18n="nav.aiChat">
+            AI Chat <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+        <div class="icon_vector"><span></span><span></span><span></span></div>
+      </div>
+      <div class="header-bottom-rule">
+        <hr />
+      </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════
+               NAV OVERLAY (fullscreen mobile menu)
+          ═══════════════════════════════════════════ -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+      <div class="overlay-rule">
+        <hr /><span>Delta American Schools · Navigation</span>
+        <hr />
+      </div>
+      <ul class="overlay-nav">
+        <li><button data-url="../index.html" data-i18n="nav.home">Home</button></li>
+        <li><button data-url="../aboutUs/aboutUs.html" data-i18n="nav.aboutUs">About Us</button></li>
+        <li><button data-url="../services/services.html" data-i18n="nav.services">Services</button></li>
+        <li><button data-url="../News/news.html" data-i18n="nav.news">News</button></li>
+        <li><button data-url="../Gallery/gallery.html" data-i18n="nav.gallery">Gallery</button></li>
+        <li class="nav-divider-item"><div class="nav-divider"></div></li>
+        <li><button data-url="../sendAdmissionPapers/pages/send-admission-papers.html" data-i18n="nav.apply">Apply</button></li>
+        <li><button data-url="../SendTheVisitAppointment/Send-to-visit.html" data-i18n="nav.bookVisit">Book a Visit</button></li>
+        <li class="nav-divider-item"><div class="nav-divider"></div></li>
+        <li><button data-url="../courses/student-login.html" data-i18n="nav.courses">Courses</button></li>
+        <li><button data-url="../my-chatbot/public/chatbot.html" data-i18n="nav.aiChat">AI Chat</button></li>
+                <li>
+                  <button id="lang-toggle" onclick="I18N.setLang(I18N.currentLang()==='en'?'ar':'en')">
+                    <i class="fa-solid fa-globe"></i>
+                  </button>
+                </li>
+
+      </ul>
+      <div class="overlay-footer">© Delta American Schools · Mansoura, Egypt</div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         HERO
+    ══════════════════════════════════════ -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="content">
+          <p class="hero-kicker" data-i18n="admissionPage.hero.kicker">Welcome</p>
+          <h1 data-i18n="admissionPage.hero.headline">Delta American </h1> <em data-i18n="admissionPage.hero.headlineEm">Schools</em>
+          <div class="hero-rule">
+            <hr/><span data-i18n="admissionPage.hero.rule">Accredited · Excellence · Future</span><hr/>
+          </div>
+          <p class="hero-deck" data-i18n="admissionPage.hero.deck">
+            Accredited by the Ministry of Education and Cognia, Delta American School
+            is known for providing high-quality education that focuses on social
+            and emotional development.
+          </p>
+          <div class="hero-buttons">
+            <button id="AcademicLevelsBtn" class="btn-primary" data-i18n="admissionPage.hero.levelsBtn">Academic Levels</button>
+            <button id="admission-form-btn" class="btn-secondary" data-i18n="admissionPage.hero.applyBtn">Send Admission Papers <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="parentLogos">
+          <div class="logo-badge">
+            <img src="../pictures/Logos/Ministry_of_Education_(Egypt)_logo.png" alt="Ministry of Education Egypt" />
+            <span data-i18n="admissionPage.logos.moe">Ministry of Education</span>
+          </div>
+          <div class="logo-badge">
+            <img src="../pictures/Logos/Guinness_World_Records_logo.png" alt="Guinness World Records" />
+            <span data-i18n="admissionPage.logos.guinness">Guinness World Records</span>
+          </div>
+          <div class="logo-badge">
+            <img src="../pictures/Logos/cogniaLogo.webp" alt="Cognia Accreditation" />
+            <span data-i18n="admissionPage.logos.cognia">Cognia Accredited</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         ACADEMIC LEVELS & FEES
+    ══════════════════════════════════════ -->
+    <section class="AcademicLevels" id="AcademicLevels">
+      <div class="section-masthead">
+        <div class="s-rule"><hr/></div>
+        <h2 class="section-label" data-i18n="admissionPage.levels.sectionLabel">Academic Levels &amp; Fees</h2>
+        <div class="s-rule"><hr/></div>
+      </div>
+
+      <div class="levels-layout">
+
+        <!-- Fees Table -->
+        <div class="fees-table">
+
+          <!-- KG Group -->
+          <div class="level-group">
+            <div class="level-group-header kg">
+              <span class="group-stage" data-i18n="levels.kg.stage">Stage I</span>
+              <h3 data-i18n="levels.kg.title">Kindergarten</h3>
+            </div>
+            <div class="level-row">
+              <span data-i18n="admissionPage.levels.kgPrep">Pre-Kindergarten (KG Prep)</span>
+              <span class="fee">EGP 68,600</span>
+            </div>
+            <div class="level-row">
+              <span data-i18n="admissionPage.levels.kg1">Kindergarten – Level 1 (KG 1)</span>
+              <span class="fee">EGP 68,600</span>
+            </div>
+            <div class="level-row">
+              <span data-i18n="admissionPage.levels.kg2">Kindergarten – Level 2 (KG 2)</span>
+              <span class="fee">EGP 68,600</span>
+            </div>
+          </div>
+
+          <!-- Primary Group -->
+          <div class="level-group">
+            <div class="level-group-header primary">
+              <span class="group-stage" data-i18n="levels.primary.stage">Stage II</span>
+              <h3 data-i18n="levels.primary.title">Primary</h3>
+            </div>
+            <div class="level-row"><span data-i18n="admissionPage.levels.primary1">Primary Grade 1</span><span class="fee">EGP 67,380</span></div>
+            <div class="level-row"><span data-i18n="admissionPage.levels.primary2">Primary Grade 2</span><span class="fee">EGP 67,380</span></div>
+            <div class="level-row"><span data-i18n="admissionPage.levels.primary3">Primary Grade 3</span><span class="fee">EGP 67,380</span></div>
+            <div class="level-row"><span data-i18n="admissionPage.levels.primary4">Primary Grade 4</span><span class="fee">EGP 67,380</span></div>
+            <div class="level-row"><span data-i18n="admissionPage.levels.primary5">Primary Grade 5</span><span class="fee">EGP 67,380</span></div>
+            <div class="level-row"><span data-i18n="admissionPage.levels.primary6">Primary Grade 6</span><span class="fee">EGP 67,380</span></div>
+          </div>
+
+          <!-- Preparatory Group -->
+          <div class="level-group">
+            <div class="level-group-header preparatory">
+              <span class="group-stage" data-i18n="levels.prep.stage">Stage III</span>
+              <h3 data-i18n="levels.prep.title">Preparatory</h3>
+            </div>
+            <div class="level-row"><span data-i18n="admissionPage.levels.prep1">Preparatory Grade 1</span><span class="fee">EGP 70,820</span></div>
+            <div class="level-row"><span data-i18n="admissionPage.levels.prep2">Preparatory Grade 2</span><span class="fee">EGP 70,820</span></div>
+            <div class="level-row"><span data-i18n="admissionPage.levels.prep3">Preparatory Grade 3</span><span class="fee">EGP 70,820</span></div>
+          </div>
+
+          <!-- Secondary Group -->
+          <div class="level-group">
+            <div class="level-group-header secondary">
+              <span class="group-stage" data-i18n="levels.secondary.stage">Stage IV</span>
+              <h3 data-i18n="levels.secondary.title">Secondary</h3>
+            </div>
+            <div class="level-row"><span data-i18n="admissionPage.levels.secondary1">Secondary Grade 1</span><span class="fee">EGP 81,150</span></div>
+            <div class="level-row"><span data-i18n="admissionPage.levels.secondary2">Secondary Grade 2</span><span class="fee">EGP 81,150</span></div>
+            <div class="level-row"><span data-i18n="admissionPage.levels.secondary3">Secondary Grade 3</span><span class="fee">EGP 81,150</span></div>
+          </div>
+
+        </div>
+
+        <!-- Additional Fees Sidebar -->
+        <aside class="additional-fees">
+          <h3 class="aside-head" data-i18n="admissionPage.additionalFees.title">Additional Fees</h3>
+          <div class="rule-thin"></div>
+          <ul>
+            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="admissionPage.additionalFees.activity">Activity Fees</span></li>
+            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="admissionPage.additionalFees.transport">Transportation Fees</span></li>
+            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="admissionPage.additionalFees.textbook">Textbook Fees</span></li>
+            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="admissionPage.additionalFees.uniform">School Uniform Fees</span></li>
+            <li><i class="fa-solid fa-circle-dot"></i> <span data-i18n="admissionPage.additionalFees.appForm">Application Form Fees</span> <em data-i18n="admissionPage.additionalFees.refundable">(Refundable if the student is not accepted)</em></li>
+          </ul>
+          <div class="rule-thin"></div>
+          <div class="aside-note">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <p data-i18n="admissionPage.additionalFees.note">Fees are subject to change. Contact the admissions office for the most current information.</p>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         ADMISSION INFO
+    ══════════════════════════════════════ -->
+    <section class="admission">
+      <div class="section-masthead">
+        <div class="s-rule"><hr/></div>
+        <h2 class="section-label" data-i18n="admissionPage.info.sectionLabel">Admission Information</h2>
+        <div class="s-rule"><hr/></div>
+      </div>
+
+      <div class="admission-layout">
+
+        <!-- Quick Facts -->
+        <div class="quick-facts">
+          <div class="fact-card">
+            <i class="fa-solid fa-baby"></i>
+            <div>
+              <h4 data-i18n="admissionPage.info.fact1.title">Admission Age</h4>
+              <p data-i18n="admissionPage.info.fact1.body">From 3 years and 6 months</p>
+            </div>
+          </div>
+          <div class="fact-card">
+            <i class="fa-regular fa-calendar"></i>
+            <div>
+              <h4 data-i18n="admissionPage.info.fact2.title">Application Deadline</h4>
+              <p data-i18n="admissionPage.info.fact2.body">Applications open in February each year</p>
+            </div>
+          </div>
+          <div class="fact-card">
+            <i class="fa-solid fa-file-pen"></i>
+            <div>
+              <h4 data-i18n="admissionPage.info.fact3.title">Placement Test</h4>
+              <p data-i18n="admissionPage.info.fact3.body">All applicants must take a placement test upon applying</p>
+            </div>
+          </div>
+          <div class="fact-card">
+            <i class="fa-solid fa-certificate"></i>
+            <div>
+              <h4 data-i18n="admissionPage.info.fact4.title">Curriculum</h4>
+              <p data-i18n="admissionPage.info.fact4.body">Skills-based: Common Core (Math &amp; English), NGSS (Science)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full Admission Content -->
+        <div class="content">
+
+          <div class="content-block">
+            <h2 data-i18n="admissionPage.info.req.title">Admission Requirements for Delta American School (2026)</h2>
+            <div class="rule-thin"></div>
+            <p data-i18n="admissionPage.info.req.intro">Delta American School follows standard procedures for international schools in Egypt, with specific requirements tailored to each academic stage. Below is a list of the essential documents and procedures required for enrollment.</p>
+          </div>
+
+          <div class="content-block">
+            <h3><i class="fa-regular fa-folder-open"></i> <span data-i18n="admissionPage.info.docs.title">Basic Documents</span> <span class="tag" data-i18n="admissionPage.info.docs.tag">Required for all stages</span></h3>
+            <ul>
+              <li><strong data-i18n="admissionPage.info.docs.d1.label">Birth Certificate:</strong> <span data-i18n="admissionPage.info.docs.d1.body">Original "Computerized" birth certificate (recent).</span></li>
+              <li><strong data-i18n="admissionPage.info.docs.d2.label">Personal Photos:</strong> <span data-i18n="admissionPage.info.docs.d2.body">8 recent passport-sized photos of the student (white background).</span></li>
+              <li><strong data-i18n="admissionPage.info.docs.d3.label">ID Copies:</strong> <span data-i18n="admissionPage.info.docs.d3.body">Valid National ID copies of both parents (Father &amp; Mother).</span></li>
+              <li><strong data-i18n="admissionPage.info.docs.d4.label">Educational Qualifications:</strong> <span data-i18n="admissionPage.info.docs.d4.body">Copies of university degrees for both parents.</span></li>
+              <li><strong data-i18n="admissionPage.info.docs.d5.label">Passport (For Non-Egyptians):</strong> <span data-i18n="admissionPage.info.docs.d5.body">Copies of the student's and parents' passports with a valid residency permit.</span></li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3><i class="fa-solid fa-right-left"></i> <span data-i18n="admissionPage.info.transfer.title">Transfer Students</span></h3>
+            <ul>
+              <li><strong data-i18n="admissionPage.info.transfer.t1.label">Success Certificate:</strong> <span data-i18n="admissionPage.info.transfer.t1.body">An official transcript of the last academic year, stamped by the Educational Directorate.</span></li>
+              <li><strong data-i18n="admissionPage.info.transfer.t2.label">Student File:</strong> <span data-i18n="admissionPage.info.transfer.t2.body">Withdrawal of the student's file from the previous school (after receiving the acceptance letter).</span></li>
+              <li><strong data-i18n="admissionPage.info.transfer.t3.label">Certificate of Good Conduct:</strong> <span data-i18n="admissionPage.info.transfer.t3.body">Sometimes required for Middle and High School students.</span></li>
+            </ul>
+          </div>
+
+          <div class="content-block">
+            <h3><i class="fa-solid fa-list-check"></i> <span data-i18n="admissionPage.info.procedures.title">Admission Procedures</span></h3>
+            <ul>
+              <li><strong data-i18n="admissionPage.info.procedures.p1.label">Application Form:</strong> <span data-i18n="admissionPage.info.procedures.p1.body">Fill out the form via the school's website or at the school premises.</span></li>
+              <li><strong data-i18n="admissionPage.info.procedures.p2.label">Assessment:</strong> <span data-i18n="admissionPage.info.procedures.p2.body">Schedule an entrance exam for the student in English, Mathematics, and Arabic.</span></li>
+              <li><strong data-i18n="admissionPage.info.procedures.p3.label">Parent Interview:</strong> <span data-i18n="admissionPage.info.procedures.p3.body">A personal interview for the parents with the school administration.</span></li>
+            </ul>
+          </div>
+
+          <div class="content-note">
+            <i class="fa-solid fa-circle-info"></i>
+            <p data-i18n="admissionPage.info.note">It is always recommended to contact the school's Admissions Department directly to confirm deadlines, as the school may require specific updates or additional paperwork based on new Ministry of Education regulations.</p>
+          </div>
+
+          <div class="content-cta">
+            <button id="admission-form-btn" class="btn-primary" data-i18n="admissionPage.hero.applyBtn">
+              Send Admission Papers <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         FOOTER
+    ══════════════════════════════════════ -->
+    <footer>
+      <div class="footer-masthead">
+        <hr class="footer-rule-top" />
+        <h2 class="footer-title" data-i18n="logo.name">Delta American Schools</h2>
+        <p class="footer-tagline" data-i18n="footer.tagline">Est. 2011 · Excellence in Education · Mansoura, Egypt</p>
+        <hr class="footer-rule-bottom" />
+      </div>
+      <section class="upper-section">
+        <div class="column">
+          <h4 data-i18n="footer.col1.title">Company Info</h4>
+          <ul>
+            <li><button id="aboutBtnFooter" data-i18n="nav.aboutUs">About Us</button></li>
+            <li><button id="servicesBtnFooter" data-i18n="nav.services">Services</button></li>
+            <li><button id="hiringBtnFooter" data-i18n="footer.col1.hiring">We Are Hiring</button></li>
+            <li><button id="socialMediaBtnFooter" data-i18n="footer.col1.social">Social Media</button></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4 data-i18n="footer.col2.title">Admins</h4>
+          <ul>
+            <li><button id="adminToPostStudioBtn" data-i18n="footer.col2.newsStudio">Studio News</button></li>
+            <li><button id="adminToCourseStudioBtn" data-i18n="footer.col2.courseStudio">Studio Courses</button></li>
+            <li><button title="Soooon" data-i18n="footer.col2.dashboard">DashBoard</button></li>
+            <li><button title="Soooon" data-i18n="footer.col2.customize">Customize</button></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4 data-i18n="footer.col3.title">Features</h4>
+          <ul>
+            <li><button id="aiBtnFooter" data-i18n="footer.col3.ai">AI Assistant</button></li>
+            <li><button id="SubmitDocumentsBtnFooter" data-i18n="footer.col3.submit">Submit Documents</button></li>
+            <li><button id="VisitBtnFooter" data-i18n="footer.col3.visit">Book School Visit</button></li>
+            <li><button id="CoursesBtnFooter" data-i18n="footer.col3.courses">Courses Page</button></li>
+          </ul>
+        </div>
+        <div class="contact">
+          <h4 data-i18n="contact.getInTouch">Get In Touch</h4>
+          <ul>
+            <li><i class="fa-solid fa-phone"></i><button id="numberOneBtnFooter">+201090700727</button></li>
+            <li><i class="fa-solid fa-envelope"></i><button id="MailBtnFooter">info@delta.edu.eg</button></li>
+            <li><i class="fa-solid fa-location-dot"></i><button id="locationBtnFooter" data-i18n="footer.address">Delta Academy, Highway Mansoura–Damietta, Dakahlia EG.</button></li>
+          </ul>
+        </div>
+      </section>
+      <div class="lower-section">
+        <p>© <span id="footer-year"></span> <span data-i18n="footer.copyright">Delta American Schools · All Rights Reserved</span></p>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

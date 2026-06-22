@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin — The Daily Brief</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="admin.css">
+    <script src="admin.js" defer></script>
+  </head>
+  <body>
+    <!-- ── LOGIN ─────────────────────────────────────────────────────── -->
+    <div id="login-screen">
+      <div class="login-box">
+        <div class="login-brand">
+          <p class="login-brand-eyebrow">Content Management</p>
+          <h1 class="login-brand-title">The Daily Brief</h1>
+        </div>
+        <div class="login-card">
+          <h2>Administrator Access</h2>
+          <div class="field">
+            <label for="password-input">Password</label>
+            <input
+              type="password"
+              id="password-input"
+              placeholder="Enter admin password"
+              autocomplete="current-password"
+            />
+          </div>
+          <button class="btn btn-primary" id="login-btn">Authenticate</button>
+          <div class="login-error" id="login-error">
+            ⚠ Incorrect password. Try again.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── ADMIN DASHBOARD ─────────────────────────────────────────── -->
+    <div id="admin-screen">
+      <header class="admin-header">
+        <div class="admin-header-left">
+          <div class="admin-logo">The Daily Brief <span>CMS</span></div>
+          <nav class="admin-nav">
+            <button class="admin-nav-btn active" data-tab="create">
+              ＋ New Post
+            </button>
+            <button class="admin-nav-btn" data-tab="manage">All Posts</button>
+          </nav>
+        </div>
+        <div style="display: flex; gap: 0.75rem; align-items: center">
+          <a
+            href="http://localhost:3000/news"
+            target="_blank"
+            style="
+              font-family: var(--mono);
+              font-size: 0.7rem;
+              letter-spacing: 0.1em;
+              text-transform: uppercase;
+              color: var(--muted);
+              text-decoration: none;
+            "
+            >View Site ↗</a
+          >
+          <button
+            class="btn btn-ghost"
+            style="width: auto; padding: 0.5rem 1rem"
+            id="logout-btn"
+          >
+            Log out
+          </button>
+        </div>
+      </header>
+
+      <main class="admin-main">
+        <!-- Create Tab -->
+        <div class="tab-panel active" id="tab-create">
+          <div class="section-header">
+            <h2 class="section-title">Create Post</h2>
+            <span class="section-sub">New article</span>
+          </div>
+
+          <div class="form-alert" id="form-alert"></div>
+
+          <div class="form-grid">
+            <div class="field field-full">
+              <label for="post-title">Headline (English) *</label>
+              <input type="text" id="post-title" placeholder="Enter article headline…" />
+            </div>
+
+            <div class="field field-full">
+              <label for="post-title-ar" style="display:flex;align-items:center;gap:.5rem;">
+                العنوان (عربي)
+                <span style="font-family:var(--mono);font-size:.65rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;">optional</span>
+              </label>
+              <input type="text" id="post-title-ar" placeholder="أدخل عنوان المقال بالعربية…" dir="rtl"
+                style="font-family:'Cairo',sans-serif;text-align:right;" />
+            </div>
+
+            <div class="field">
+              <label for="post-author">Author *</label>
+              <input type="text" id="post-author" placeholder="Jane Smith" />
+            </div>
+
+            <div class="field">
+              <label for="post-category">Category *</label>
+              <input type="text" id="post-category" placeholder="e.g. Technology, Politics…"
+                list="category-suggestions" />
+              <datalist id="category-suggestions"></datalist>
+            </div>
+
+            <div class="field field-full">
+              <label>Cover Image</label>
+              <div class="drop-zone" id="drop-zone">
+                <input type="file" id="post-image" accept="image/*" />
+                <div class="drop-zone-icon">🖼</div>
+                <p class="drop-zone-label">Drop image here or click to browse · Max 5MB</p>
+                <img class="drop-zone-preview" id="img-preview" alt="Preview" />
+              </div>
+            </div>
+
+            <div class="field field-full">
+              <label for="post-body">Article Body (English) *</label>
+              <textarea id="post-body" placeholder="Write your article here…" rows="10"></textarea>
+              <div class="field-footer">
+                <span class="char-count" id="char-count">0 characters</span>
+              </div>
+            </div>
+
+            <div class="field field-full">
+              <label for="post-body-ar" style="display:flex;align-items:center;gap:.5rem;">
+                نص المقال (عربي)
+                <span style="font-family:var(--mono);font-size:.65rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;">optional</span>
+              </label>
+              <textarea id="post-body-ar" placeholder="اكتب المقال هنا بالعربية…" rows="10" dir="rtl"
+                style="font-family:'Cairo',sans-serif;text-align:right;line-height:1.9;"></textarea>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; margin-top: 0.5rem">
+            <button class="btn btn-primary" id="submit-btn">Publish Article →</button>
+            <button class="btn btn-ghost" style="width: auto; padding: 0.85rem 1.5rem" id="reset-btn">Clear</button>
+          </div>
+        </div>
+
+        <!-- Manage Tab -->
+        <div class="tab-panel" id="tab-manage">
+          <div class="section-header">
+            <h2 class="section-title">All Posts</h2>
+            <span class="section-sub" id="post-count">Loading…</span>
+          </div>
+          <div id="post-list-container">
+            <div class="posts-empty">Loading articles…</div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+  </body>
+</html>

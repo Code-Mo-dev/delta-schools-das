@@ -1,0 +1,5 @@
+node_modules/
+.env
+Server/uploads/*
+News/uploads/*
+*.log

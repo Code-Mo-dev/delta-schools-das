@@ -1,0 +1,23 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Environment secrets — never commit
+.env
+Server/.env
+
+# Uploaded files (served from Railway Volume in production)
+News/uploads/*
+Server/uploads/*
+!News/uploads/.gitkeep
+!Server/uploads/.gitkeep
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.log
+.prepros/
+prepros.config
+
+# Build artifacts
+*.scss.map

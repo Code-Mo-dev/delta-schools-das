@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Portal – Delta American Schools</title>
+  <!-- ── Primary Meta Tags ── -->
+  <meta name="title" content="Student Portal | Delta American Schools" />
+  <meta name="description" content="Sign in or create your student account to access courses and exams on the Delta American Schools digital learning portal." />
+  <meta name="keywords"
+    content="Delta American Schools, DAS, Mansoura, international school, Egypt, American curriculum" />
+  <meta name="author" content="Delta American Schools" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yourdomain.com/PAGE-URL" />
+  
+  <!-- ── Open Graph (Facebook, WhatsApp, LinkedIn previews) ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com/PAGE-URL" />
+  <meta property="og:title" content="Student Portal | Delta American Schools" />
+  <meta property="og:description" content="Sign in or create your student account to access courses and exams on the Delta American Schools digital learning portal." />
+  <meta property="og:image" content="https://yourdomain.com/pictures/Logos/logo.png" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="ar_EG" />
+  <meta property="og:site_name" content="Delta American Schools" />
+  
+  <!-- ── Twitter Card ── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Student Portal | Delta American Schools" />
+  <meta name="twitter:description" content="Sign in or create your student account to access courses and exams on the Delta American Schools digital learning portal." />
+  <meta name="twitter:image" content="https://yourdomain.com/pictures/Logos/logo.png" />
+
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <!-- Custom Styles -->
+  <style>
+    :root {
+      --ink:      #1a1208;
+      --paper:    #f5f0e8;
+      --cream:    #ede8dc;
+      --rule:     #c8b89a;
+      --accent:   #8b2020;
+      --muted:    #7a6e5f;
+      --green:    #2d6a1f;
+      --playfair: 'Playfair Display', Georgia, serif;
+      --serif:    'Source Serif 4', Georgia, serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--serif);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      background-image: repeating-linear-gradient(
+        0deg, transparent, transparent 28px,
+        rgba(200,184,154,.15) 28px, rgba(200,184,154,.15) 29px
+      );
+    }
+
+    .page-wrap { width: 100%; max-width: 480px; display: flex; flex-direction: column; gap: 1.5rem; }
+
+    /* Masthead */
+    .masthead { text-align: center; }
+    .masthead img { width: 64px; height: 64px; border-radius: 50%; border: 1px solid var(--rule); object-fit: cover; margin: 0 auto .85rem; filter: sepia(.1); display: block; }
+    .masthead h1 { font-family: var(--playfair); font-size: clamp(1.4rem, 5vw, 2rem); font-weight: 900; color: var(--ink); margin-bottom: .3rem; }
+    .masthead p  { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+
+    /* Rule */
+    .m-rule { display: flex; align-items: center; gap: .75rem; }
+    .m-rule hr { flex: 1; border: none; border-top: 1px solid var(--rule); }
+    .m-rule span { font-size: .6rem; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+
+    /* Tabs */
+    .tabs { display: flex; border: 1px solid var(--rule); background: var(--paper); }
+    .tab-btn {
+      flex: 1; padding: .75rem 1rem;
+      font-family: var(--serif); font-size: .72rem;
+      letter-spacing: .15em; text-transform: uppercase;
+      background: transparent; border: none; color: var(--muted);
+      cursor: pointer; transition: all .2s; border-bottom: 2px solid transparent;
+    }
+    .tab-btn.active { color: var(--ink); border-bottom-color: var(--accent); background: var(--cream); }
+    .tab-btn:hover:not(.active) { background: var(--cream); }
+
+    /* Card */
+    .form-card { background: var(--paper); border: 1px solid var(--rule); box-shadow: 4px 4px 0 var(--ink); }
+    .tab-panel { display: none; padding: 1.75rem 1.6rem; }
+    .tab-panel.active { display: block; }
+
+    .field { display: flex; flex-direction: column; gap: .4rem; margin-bottom: 1.2rem; }
+    .field label { font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; font-weight: 600; display: flex; align-items: center; gap: .4rem; }
+    .field label i { color: var(--accent); font-size: .72rem; }
+    .field input, .field select {
+      padding: .65rem 1rem; border: 1px solid var(--rule);
+      background: var(--cream); color: var(--ink);
+      font-family: var(--serif); font-size: .9rem; outline: none;
+      transition: border-color .2s, box-shadow .2s; width: 100%;
+    }
+    .field input::placeholder { color: var(--muted); font-style: italic; }
+    .field input:focus, .field select:focus { border-color: var(--ink); box-shadow: 2px 2px 0 var(--ink); background: var(--paper); }
+
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 1rem 0; }
+
+    .submit-btn {
+      display: flex; align-items: center; justify-content: center; gap: .6rem;
+      width: 100%; padding: .8rem 1.5rem;
+      background: var(--ink); color: var(--paper);
+      border: 1px solid var(--ink); font-family: var(--serif);
+      font-size: .8rem; letter-spacing: .2em; text-transform: uppercase;
+      cursor: pointer; transition: background .2s;
+    }
+    .submit-btn:hover:not(:disabled) { background: var(--accent); border-color: var(--accent); }
+    .submit-btn:disabled { opacity: .6; cursor: not-allowed; }
+
+    .alert {
+      display: none; padding: .85rem 1rem; font-size: .85rem;
+      font-style: italic; margin-bottom: 1rem;
+    }
+    .alert.error   { background: #fdf5f5; border-top: 3px solid var(--accent); color: var(--accent); display: flex; align-items: flex-start; gap: .6rem; }
+    .alert.success { background: #f0fdf0; border-top: 3px solid var(--green);  color: var(--green);  display: flex; align-items: flex-start; gap: .6rem; }
+    .alert i { flex-shrink: 0; margin-top: .1rem; }
+
+    .footer-strip { text-align: center; }
+    .footer-strip hr { border: none; border-top: 1px solid var(--rule); margin-bottom: .75rem; }
+    .footer-strip p { font-size: .6rem; letter-spacing: .15em; text-transform: uppercase; color: var(--muted); }
+
+    .field-hint { font-size: .68rem; color: var(--muted); font-style: italic; margin-top: .2rem; }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+
+    <!-- Masthead -->
+    <div class="masthead">
+      <img src="/pictures/Logos/logo.png" alt="DAS Logo" />
+      <h1>Delta American Schools</h1>
+      <p>Student Portal</p>
+    </div>
+
+    <div class="m-rule">
+      <hr/><span>Academic Year 2025–2026</span><hr/>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="login">
+        <i class="fa-solid fa-right-to-bracket"></i> Sign In
+      </button>
+      <button class="tab-btn" data-tab="register">
+        <i class="fa-solid fa-user-plus"></i> Create Account
+      </button>
+    </div>
+
+    <!-- Card -->
+    <div class="form-card">
+
+      <!-- LOGIN TAB -->
+      <div class="tab-panel active" id="tab-login">
+        <div class="alert" id="login-alert">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <span id="login-alert-text"></span>
+        </div>
+        <div class="field">
+          <label><i class="fa-solid fa-user"></i> Username</label>
+          <input type="text" id="login-username" placeholder="Your username" autocomplete="username" />
+        </div>
+        <div class="field">
+          <label><i class="fa-solid fa-lock"></i> Password</label>
+          <input type="password" id="login-password" placeholder="Your password" autocomplete="current-password" />
+        </div>
+        <hr class="divider" />
+        <button class="submit-btn" id="login-btn">
+          <span>Sign In</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <p style="text-align:center;margin-top:1rem;font-size:.75rem;color:var(--muted);">
+          Don't have an account?
+          <button onclick="switchTab('register')" style="background:none;border:none;color:var(--accent);cursor:pointer;font-family:var(--serif);font-size:.75rem;text-decoration:underline;">Create one</button>
+        </p>
+      </div>
+
+      <!-- REGISTER TAB -->
+      <div class="tab-panel" id="tab-register">
+        <div class="alert" id="register-alert">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <span id="register-alert-text"></span>
+        </div>
+        <div class="field">
+          <label><i class="fa-solid fa-id-card"></i> Full Name</label>
+          <input type="text" id="reg-name" placeholder="Your full name" autocomplete="name" />
+        </div>
+        <div class="field">
+          <label><i class="fa-solid fa-user"></i> Username</label>
+          <input type="text" id="reg-username" placeholder="Choose a username" autocomplete="username" />
+          <span class="field-hint">Lowercase letters and numbers only, no spaces.</span>
+        </div>
+        <div class="field">
+          <label><i class="fa-solid fa-graduation-cap"></i> Grade Level</label>
+          <select id="reg-grade">
+            <option value="">Select your grade</option>
+            <option>KG 1</option><option>KG 2</option>
+            <option>Grade 1</option><option>Grade 2</option><option>Grade 3</option>
+            <option>Grade 4</option><option>Grade 5</option><option>Grade 6</option>
+            <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
+            <option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
+          </select>
+        </div>
+        <div class="field">
+          <label><i class="fa-solid fa-lock"></i> Password</label>
+          <input type="password" id="reg-password" placeholder="At least 6 characters" autocomplete="new-password" />
+        </div>
+        <div class="field">
+          <label><i class="fa-solid fa-lock"></i> Confirm Password</label>
+          <input type="password" id="reg-password2" placeholder="Repeat your password" autocomplete="new-password" />
+        </div>
+        <hr class="divider" />
+        <button class="submit-btn" id="register-btn">
+          <span>Create Account</span>
+          <i class="fa-solid fa-user-plus"></i>
+        </button>
+        <p style="text-align:center;margin-top:1rem;font-size:.75rem;color:var(--muted);">
+          Already have an account?
+          <button onclick="switchTab('login')" style="background:none;border:none;color:var(--accent);cursor:pointer;font-family:var(--serif);font-size:.75rem;text-decoration:underline;">Sign in</button>
+        </p>
+      </div>
+
+    </div>
+
+    <div class="footer-strip">
+      <hr />
+      <p>© <span id="year"></span> Delta American Schools · Mansoura, Egypt</p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ── Tab switching ─────────────────────────────────────────
+    function switchTab(name) {
+      document.querySelectorAll('.tab-btn').forEach(b =>
+        b.classList.toggle('active', b.dataset.tab === name));
+      document.querySelectorAll('.tab-panel').forEach(p =>
+        p.classList.toggle('active', p.id === 'tab-' + name));
+    }
+    document.querySelectorAll('.tab-btn').forEach(btn =>
+      btn.addEventListener('click', () => switchTab(btn.dataset.tab)));
+
+    // ── Alert helpers ─────────────────────────────────────────
+    function showAlert(prefix, type, msg) {
+      const el  = document.getElementById(prefix + '-alert');
+      const txt = document.getElementById(prefix + '-alert-text');
+      txt.textContent = msg;
+      el.className = 'alert ' + type;
+    }
+    function hideAlert(prefix) {
+      document.getElementById(prefix + '-alert').className = 'alert';
+    }
+
+    // ── Login ─────────────────────────────────────────────────
+    document.getElementById('login-btn').addEventListener('click', doLogin);
+    document.getElementById('login-password').addEventListener('keydown', e => {
+      if (e.key === 'Enter') doLogin();
+    });
+
+    async function doLogin() {
+      hideAlert('login');
+      const username = document.getElementById('login-username').value.trim();
+      const password = document.getElementById('login-password').value;
+      if (!username || !password) {
+        showAlert('login', 'error', 'Please enter your username and password.');
+        return;
+      }
+      const btn = document.getElementById('login-btn');
+      btn.disabled = true;
+      btn.querySelector('span').textContent = 'Signing in…';
+
+      try {
+        const res  = await fetch('/api/courses/student-login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password }),
+        });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          sessionStorage.setItem('student_token', data.token);
+          sessionStorage.setItem('student_name', data.name);
+          window.location.href = '/courses';
+        } else {
+          showAlert('login', 'error', data.error || 'Invalid username or password.');
+        }
+      } catch (e) {
+        showAlert('login', 'error', 'Could not reach server. Is it running?');
+      } finally {
+        btn.disabled = false;
+        btn.querySelector('span').textContent = 'Sign In';
+      }
+    }
+
+    // ── Register ──────────────────────────────────────────────
+    document.getElementById('register-btn').addEventListener('click', doRegister);
+    document.getElementById('reg-password2').addEventListener('keydown', e => {
+      if (e.key === 'Enter') doRegister();
+    });
+
+    async function doRegister() {
+      hideAlert('register');
+      const name      = document.getElementById('reg-name').value.trim();
+      const username  = document.getElementById('reg-username').value.trim();
+      const grade     = document.getElementById('reg-grade').value;
+      const password  = document.getElementById('reg-password').value;
+      const password2 = document.getElementById('reg-password2').value;
+
+      if (!name || !username || !password || !password2) {
+        showAlert('register', 'error', 'Please fill in all fields.');
+        return;
+      }
+      if (password !== password2) {
+        showAlert('register', 'error', 'Passwords do not match.');
+        return;
+      }
+      if (password.length < 6) {
+        showAlert('register', 'error', 'Password must be at least 6 characters.');
+        return;
+      }
+      if (!/^[a-z0-9_]+$/i.test(username)) {
+        showAlert('register', 'error', 'Username can only contain letters, numbers, and underscores.');
+        return;
+      }
+
+      const btn = document.getElementById('register-btn');
+      btn.disabled = true;
+      btn.querySelector('span').textContent = 'Creating account…';
+
+      try {
+        const res  = await fetch('/api/courses/student-register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, username, password, grade }),
+        });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          // Clear form and switch to login with success message
+          ['reg-name','reg-username','reg-password','reg-password2'].forEach(id =>
+            document.getElementById(id).value = '');
+          document.getElementById('reg-grade').value = '';
+          switchTab('login');
+          showAlert('login', 'success', '✓ Account created! You can now sign in.');
+        } else {
+          showAlert('register', 'error', data.error || 'Registration failed.');
+        }
+      } catch (e) {
+        showAlert('register', 'error', 'Could not reach server. Is it running?');
+      } finally {
+        btn.disabled = false;
+        btn.querySelector('span').textContent = 'Create Account';
+      }
+    }
+  </script>
+</body>
+</html>

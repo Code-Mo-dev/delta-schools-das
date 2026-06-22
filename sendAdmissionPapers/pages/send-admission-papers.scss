@@ -1,0 +1,527 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap");
+
+// ─────────────────────────────────────────────
+// Tokens
+// ─────────────────────────────────────────────
+:root {
+  --ink: #1a1208;
+  --paper: #f5f0e8;
+  --cream: #ede8dc;
+  --rule: #c8b89a;
+  --accent: #8b2020;
+  --muted: #7a6e5f;
+  --playfair: 'Playfair Display', Georgia, serif;
+  --serif: 'Source Serif 4', Georgia, serif;
+}
+
+// ─────────────────────────────────────────────
+// Reset
+// ─────────────────────────────────────────────
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--serif);
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 3rem 1.5rem 4rem;
+
+  background-image: repeating-linear-gradient(0deg,
+      transparent, transparent 28px,
+      rgba(200, 184, 154, .15) 28px, rgba(200, 184, 154, .15) 29px);
+}
+
+body.rtl {
+  .form-card .form-card-header {
+    padding: 1rem 1.25rem;
+
+    i {
+      font-size: 1.5rem;
+    }
+
+    div {
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    .lang-toggle-container {
+      width: fit-content;
+      scale: 0.8;
+      margin: 0px;
+      margin-right: 54%;
+    }
+  }
+
+  .submit-btn i {
+    font-size: 0.85rem;
+    transform: rotate(180deg);
+  }
+
+  [type="tel"] {
+    direction: rtl;
+  }
+
+  .form-masthead .masthead-rule span {
+    font-size: 0.5rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 600px) {
+    .form-card .form-card-header {
+      padding: 1rem 1.25rem;
+      position: relative;
+
+      .lang-toggle-container {
+        width: fit-content;
+        scale: 0.8;
+        margin-right: 0% !important;
+        position: absolute;
+        left: 1rem;
+      }
+    }
+  }
+}
+
+// ─────────────────────────────────────────────
+// Page Wrapper
+// ─────────────────────────────────────────────
+.page-wrap {
+  width: 100%;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+// ─────────────────────────────────────────────
+// Masthead
+// ─────────────────────────────────────────────
+.form-masthead {
+  text-align: center;
+
+  .form-kicker {
+    font-size: 1rem;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: .6rem;
+    display: block;
+  }
+
+  .form-headline {
+    font-family: var(--playfair);
+    font-size: clamp(2rem, 7vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 1rem;
+
+    em {
+      font-style: italic;
+      color: var(--accent);
+    }
+  }
+
+  .masthead-rule {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    margin-bottom: 1rem;
+
+    hr {
+      flex: 1;
+      border: none;
+      border-top: 1px solid var(--rule);
+    }
+
+    span {
+      font-size: 0.8rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+  }
+
+  .form-deck {
+    font-size: .9rem;
+    line-height: 1.8;
+    color: var(--muted);
+    font-style: italic;
+  }
+}
+
+// ─────────────────────────────────────────────
+// Form Card
+// ─────────────────────────────────────────────
+.form-card {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  box-shadow: 4px 4px 0 var(--ink);
+
+  .form-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.75rem;
+    background: var(--ink);
+    color: var(--paper);
+
+    >i {
+      font-size: 1.4rem;
+      opacity: .8;
+    }
+
+    h2 {
+      font-family: var(--playfair);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+
+    p {
+      font-size: .68rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(245, 240, 232, .5);
+      margin-top: .15rem;
+    }
+
+    // Language Toggle
+    .lang-toggle-container {
+      display: flex;
+      margin-left: auto;
+      width: fit-content;
+
+      #lang-toggle {
+        background: var(--paper);
+        border: 1px solid var(--rule);
+        color: var(--ink);
+        font-size: .75rem;
+        padding: .5rem 1rem;
+        border-radius: .25rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        transition: background .2s;
+
+        &:hover {
+          background: var(--cream);
+        }
+      }
+    }
+  }
+
+  form {
+    padding: 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+}
+
+// ─────────────────────────────────────────────
+// Field Group
+// ─────────────────────────────────────────────
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+
+  label {
+    font-size: .72rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--ink);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: .45rem;
+
+    i {
+      color: var(--accent);
+      font-size: .75rem;
+    }
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    width: 100%;
+    padding: .7rem 1rem;
+    border: 1px solid var(--rule);
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: .9rem;
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+
+    &::placeholder {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    &:focus {
+      border-color: var(--ink);
+      box-shadow: 2px 2px 0 var(--ink);
+      background: var(--paper);
+    }
+  }
+}
+
+// ─────────────────────────────────────────────
+// File Drop Zone
+// ─────────────────────────────────────────────
+.file-drop {
+  position: relative;
+  border: 1px dashed var(--rule);
+  background: var(--cream);
+  transition: border-color .2s, background .2s;
+  cursor: pointer;
+
+  &:hover,
+  &.drag-over {
+    border-color: var(--ink);
+    background: var(--paper);
+  }
+
+  input[type="file"] {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .file-drop-inner {
+    padding: 1.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .4rem;
+    text-align: center;
+    pointer-events: none;
+
+    i {
+      font-size: 1.6rem;
+      color: var(--muted);
+    }
+
+    .file-drop-label {
+      font-size: .88rem;
+      color: var(--ink);
+
+      span {
+        color: var(--accent);
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+    }
+
+    .file-drop-hint {
+      font-size: .72rem;
+      color: var(--muted);
+      letter-spacing: .08em;
+    }
+
+    .file-name {
+      font-size: .8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-top: .25rem;
+    }
+  }
+}
+
+// ─────────────────────────────────────────────
+// Divider
+// ─────────────────────────────────────────────
+.form-divider {
+  border: none;
+  border-top: 1px solid var(--rule);
+}
+
+// ─────────────────────────────────────────────
+// Submit Button
+// ─────────────────────────────────────────────
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  width: 100%;
+  padding: .85rem 1.5rem;
+  background: var(--ink);
+  color: var(--paper);
+  border: 1px solid var(--ink);
+  font-family: var(--serif);
+  font-size: .82rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+
+  &:hover:not(:disabled) {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  &:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+  }
+
+  i {
+    font-size: .85rem;
+  }
+}
+
+// ─────────────────────────────────────────────
+// Success & Error Messages
+// ─────────────────────────────────────────────
+%feedback-base {
+  display: none;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem 1.75rem;
+
+  &.visible {
+    display: flex;
+  }
+
+  i {
+    font-size: 1.4rem;
+    margin-top: .1rem;
+    flex-shrink: 0;
+  }
+
+  strong {
+    font-family: var(--playfair);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--ink);
+    display: block;
+    margin-bottom: .3rem;
+  }
+
+  p {
+    font-size: .88rem;
+    line-height: 1.7;
+    color: var(--muted);
+    font-style: italic;
+  }
+}
+
+.success-msg {
+  @extend %feedback-base;
+  border-top: 1px solid var(--rule);
+  background: var(--paper);
+
+  i {
+    color: #3a6b2a;
+  }
+
+  // green for success
+}
+
+.error-msg {
+  @extend %feedback-base;
+  border-top: 3px solid var(--accent);
+  background: #fdf5f5;
+
+  i {
+    color: var(--accent);
+  }
+
+  strong {
+    color: var(--accent);
+  }
+}
+
+// ─────────────────────────────────────────────
+// Page Footer
+// ─────────────────────────────────────────────
+.page-footer {
+  text-align: center;
+
+  .footer-rule {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin-bottom: .85rem;
+  }
+
+  p {
+    font-size: .62rem;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+}
+
+// ─────────────────────────────────────────────
+// Responsive
+// ─────────────────────────────────────────────
+@media (max-width: 480px) {
+
+  .form-card form {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .form-card .form-card-header {
+    padding: 1rem 1.25rem;
+
+    i {
+      font-size: 1.2rem;
+    }
+
+    div {
+      h2 {
+        font-size: .7rem;
+      }
+
+      p {
+        font-size: .5rem;
+      }
+    }
+
+    .lang-toggle-container {
+      scale: 0.8;
+    }
+  }
+
+  .form-masthead .masthead-rule span {
+    font-size: 0.5rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+
+}

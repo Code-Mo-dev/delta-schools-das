@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Courses Admin – Delta American Schools</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <link rel="stylesheet" href="courses-admin.css" />
+</head>
+<body>
+  <div id="loginScreen">
+    <div class="login-card">
+      <div class="login-header">
+        <i class="fa-solid fa-chalkboard-user"></i>
+        <div><h2>Instructor Access</h2><p>Courses Management</p></div>
+      </div>
+      <div class="login-body">
+        <div class="field">
+          <label><i class="fa-solid fa-lock"></i> Instructor Password</label>
+          <input type="password" id="instrPassword" placeholder="Enter your password" />
+        </div>
+        <hr class="divider" />
+        <button class="btn btn-primary" id="instrLoginBtn">
+          <span>Sign In</span><i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <div class="login-error" id="loginError">Invalid password. Please try again.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="dashboard">
+    <div class="dash-header">
+      <div><h1>Courses Management</h1><p>Delta American Schools · Instructor Panel</p></div>
+      <div style="display:flex;align-items:center;gap:.75rem">
+        <button class="btn-logout" id="instrLogout"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+      </div>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div style="display:flex;gap:0;border-bottom:2px solid var(--ink);margin-bottom:2rem;background:var(--paper);">
+      <button class="dash-tab-btn active" data-section="courses" style="font-family:var(--serif);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;padding:.75rem 1.5rem;background:var(--ink);color:var(--paper);border:none;cursor:pointer;transition:all .2s;">
+        <i class="fa-solid fa-book-open"></i> Courses
+      </button>
+      <button class="dash-tab-btn" data-section="students" style="font-family:var(--serif);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;padding:.75rem 1.5rem;background:transparent;color:var(--muted);border:none;cursor:pointer;transition:all .2s;">
+        <i class="fa-solid fa-users"></i> Students
+      </button>
+    </div>
+
+    <!-- Courses Section -->
+    <div id="section-courses" class="dash-body">
+      <div class="add-section">
+        <div class="add-section-header"><i class="fa-solid fa-plus"></i><h2>Add New Course</h2></div>
+        <div class="add-section-body">
+          <div id="formBanner" class="banner"></div>
+          <form id="addCourseForm">
+            <div class="form-grid">
+              <div class="field"><label><i class="fa-solid fa-heading"></i> Course Title (English)</label><input type="text" name="title" placeholder="e.g. Introduction to Algebra" required /></div>
+              <div class="field"><label><i class="fa-solid fa-book"></i> Subject</label><input type="text" name="subject" placeholder="e.g. Mathematics" required /></div>
+              <div class="field"><label><i class="fa-solid fa-graduation-cap"></i> Grade Level</label>
+                <select name="grade" required>
+                  <option value="">Select Grade</option>
+                  <option>KG 1</option><option>KG 2</option>
+                  <option>Grade 1</option><option>Grade 2</option><option>Grade 3</option>
+                  <option>Grade 4</option><option>Grade 5</option><option>Grade 6</option>
+                  <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
+                  <option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
+                </select>
+              </div>
+              <div class="field"><label><i class="fa-brands fa-youtube"></i> YouTube Video URL</label><input type="url" name="videoUrl" placeholder="https://www.youtube.com/watch?v=..." /></div>
+              <div class="field full"><label><i class="fa-solid fa-align-left"></i> Description (English)</label><textarea name="description" placeholder="Brief description of this course..." required></textarea></div>
+              <div class="field full"><label><i class="fa-solid fa-file-pdf"></i> PDF / Material URL</label><input type="url" name="pdfUrl" placeholder="https://drive.google.com/..." /></div>
+              <div class="field full translation-divider">
+                <label class="translation-label">— Arabic Translation (Optional) —</label>
+              </div>
+              <div class="field full">
+                <label class="translation-field-label"><i class="fa-solid fa-heading"></i> عنوان الكورس (عربي) <span class="optional-span">optional</span></label>
+                <input type="text" name="title_ar" placeholder="مثال: مقدمة في الجبر" dir="rtl" class="arabic-input" />
+              </div>
+              <div class="field full">
+                <label class="translation-field-label"><i class="fa-solid fa-align-left"></i> وصف الكورس (عربي) <span class="optional-span">optional</span></label>
+                <textarea name="description_ar" placeholder="وصف مختصر للكورس بالعربية..." dir="rtl" class="arabic-textarea"></textarea>
+              </div>
+            </div>
+            <hr class="divider" />
+            <button type="submit" class="btn btn-add" id="addBtn"><span>Add Course</span><i class="fa-solid fa-plus"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="list-section-header"><hr/><h2>All Courses (<span id="courseCount">0</span>)</h2><hr/></div>
+      <div id="coursesList"><div class="empty-list">No courses yet.</div></div>
+    </div><!-- end section-courses -->
+
+    <!-- Students Section -->
+    <div id="section-students" class="dash-body" style="display:none;">
+      <div class="list-section-header"><hr/><h2>Registered Students (<span id="studentCount">0</span>)</h2><hr/></div>
+      <div id="studentsList"><div class="empty-list">Loading students…</div></div>
+    </div>
+  </div>
+
+  <!-- ── Edit Modal ── -->
+  <div class="modal-backdrop" id="editModal">
+    <div class="modal-box">
+      <div class="modal-box-header">
+        <h2><i class="fa-solid fa-pen-to-square" style="margin-right:.5rem"></i>Edit Course</h2>
+        <button class="modal-box-close" id="editModalClose">✕</button>
+      </div>
+      <div class="modal-box-body">
+        <div id="editBanner" class="banner"></div>
+        <form id="editCourseForm">
+          <input type="hidden" id="editCourseId" />
+          <div class="form-grid">
+            <div class="field"><label><i class="fa-solid fa-heading"></i> Course Title (English)</label><input type="text" id="editTitle" placeholder="e.g. Introduction to Algebra" required /></div>
+            <div class="field"><label><i class="fa-solid fa-book"></i> Subject</label><input type="text" id="editSubject" placeholder="e.g. Mathematics" required /></div>
+            <div class="field"><label><i class="fa-solid fa-graduation-cap"></i> Grade Level</label>
+              <select id="editGrade" required>
+                <option value="">Select Grade</option>
+                <option>KG 1</option><option>KG 2</option>
+                <option>Grade 1</option><option>Grade 2</option><option>Grade 3</option>
+                <option>Grade 4</option><option>Grade 5</option><option>Grade 6</option>
+                <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
+                <option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
+              </select>
+            </div>
+            <div class="field"><label><i class="fa-brands fa-youtube"></i> YouTube Video URL</label><input type="url" id="editVideoUrl" placeholder="https://www.youtube.com/watch?v=..." /></div>
+            <div class="field full"><label><i class="fa-solid fa-align-left"></i> Description (English)</label><textarea id="editDescription" placeholder="Brief description..." required></textarea></div>
+            <div class="field full"><label><i class="fa-solid fa-file-pdf"></i> PDF / Material URL</label><input type="url" id="editPdfUrl" placeholder="https://drive.google.com/..." /></div>
+            <div class="field full translation-divider">
+              <label class="translation-label">— Arabic Translation (Optional) —</label>
+            </div>
+            <div class="field full">
+              <label class="translation-field-label"><i class="fa-solid fa-heading"></i> عنوان الكورس (عربي) <span class="optional-span">optional</span></label>
+              <input type="text" id="editTitleAr" placeholder="مثال: مقدمة في الجبر" dir="rtl" class="arabic-input" />
+            </div>
+            <div class="field full">
+              <label class="translation-field-label"><i class="fa-solid fa-align-left"></i> وصف الكورس (عربي) <span class="optional-span">optional</span></label>
+              <textarea id="editDescriptionAr" placeholder="وصف مختصر للكورس بالعربية..." dir="rtl" class="arabic-textarea"></textarea>
+            </div>
+          </div>
+          <hr class="divider" />
+          <button type="submit" class="btn btn-add" id="saveEditBtn"><span>Save Changes</span><i class="fa-solid fa-floppy-disk"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Edit Student Modal ── -->
+  <div class="modal-backdrop" id="editStudentModal">
+    <div class="modal-box">
+      <div class="modal-box-header">
+        <h2><i class="fa-solid fa-user-pen" style="margin-right:.5rem"></i>Edit Student</h2>
+        <button class="modal-box-close" id="editStudentModalClose">✕</button>
+      </div>
+      <div class="modal-box-body">
+        <div id="editStudentBanner" class="banner"></div>
+        <input type="hidden" id="editStudentId" />
+        <div class="form-grid">
+          <div class="field full">
+            <label><i class="fa-solid fa-id-card"></i> Full Name</label>
+            <input type="text" id="editStudentName" placeholder="Student full name" />
+          </div>
+          <div class="field full">
+            <label><i class="fa-solid fa-user"></i> Username</label>
+            <input type="text" id="editStudentUsername" placeholder="username" />
+          </div>
+          <div class="field full">
+            <label><i class="fa-solid fa-graduation-cap"></i> Grade Level</label>
+            <select id="editStudentGrade">
+              <option value="">No grade assigned</option>
+              <option>KG 1</option><option>KG 2</option>
+              <option>Grade 1</option><option>Grade 2</option><option>Grade 3</option>
+              <option>Grade 4</option><option>Grade 5</option><option>Grade 6</option>
+              <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option>
+              <option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label><i class="fa-solid fa-lock"></i> New Password <span style="font-size:.6rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-left:.4rem;">leave blank to keep current</span></label>
+            <input type="password" id="editStudentPassword" placeholder="New password (min 6 characters)" />
+          </div>
+        </div>
+        <hr class="divider" />
+        <button class="btn btn-add" id="saveStudentBtn"><span>Save Changes</span><i class="fa-solid fa-floppy-disk"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const KEY = 'instructor_token';
+    let instrToken = sessionStorage.getItem(KEY);
+    if (instrToken) showDashboard();
+
+    document.getElementById('instrLoginBtn').addEventListener('click', async () => {
+      const btn = document.getElementById('instrLoginBtn');
+      const pw  = document.getElementById('instrPassword').value;
+      const err = document.getElementById('loginError');
+      err.classList.remove('visible');
+      btn.disabled = true; btn.querySelector('span').textContent = 'Signing in...';
+      try {
+        const res  = await fetch('/api/courses/instructor-login', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({password:pw}) });
+        const data = await res.json();
+        if (res.ok && data.success) { sessionStorage.setItem(KEY, data.token); instrToken = data.token; showDashboard(); }
+        else throw new Error(data.error || 'Invalid password.');
+      } catch(e) { err.textContent = e.message; err.classList.add('visible'); btn.disabled=false; btn.querySelector('span').textContent='Sign In'; }
+    });
+    document.getElementById('instrPassword').addEventListener('keydown', e => { if(e.key==='Enter') document.getElementById('instrLoginBtn').click(); });
+    document.getElementById('instrLogout').addEventListener('click', () => { sessionStorage.removeItem(KEY); location.reload(); });
+
+    function showDashboard() {
+      document.getElementById('loginScreen').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'block';
+      loadCourses();
+    }
+
+    // ── Tab switching ──────────────────────────────────────────
+    document.querySelectorAll('.dash-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.dataset.section;
+        document.querySelectorAll('.dash-tab-btn').forEach(b => {
+          b.style.background = 'transparent';
+          b.style.color = 'var(--muted)';
+        });
+        btn.style.background = 'var(--ink)';
+        btn.style.color = 'var(--paper)';
+        document.getElementById('section-courses').style.display = section === 'courses' ? '' : 'none';
+        document.getElementById('section-students').style.display = section === 'students' ? '' : 'none';
+        if (section === 'students') loadStudents();
+      });
+    });
+
+    // ── Add Course ─────────────────────────────────────────────
+    document.getElementById('addCourseForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('addBtn');
+      const banner = document.getElementById('formBanner');
+      banner.className = 'banner';
+      btn.disabled = true; btn.querySelector('span').textContent = 'Saving...';
+      const body = Object.fromEntries(new FormData(e.target).entries());
+      try {
+        const res = await fetch('/api/courses', { method:'POST', headers:{'Content-Type':'application/json', Authorization:'Bearer '+instrToken}, body:JSON.stringify(body) });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Failed.');
+        banner.textContent = 'Course added successfully!'; banner.className = 'banner success';
+        e.target.reset(); loadCourses();
+      } catch(err) { banner.textContent = err.message; banner.className = 'banner error'; }
+      btn.disabled = false; btn.querySelector('span').textContent = 'Add Course';
+    });
+
+    // ── Load Courses ───────────────────────────────────────────
+    let allCoursesCache = [];
+    async function loadCourses() {
+      try {
+        const res = await fetch('/api/courses', { headers:{Authorization:'Bearer '+instrToken} });
+        const courses = await res.json();
+        allCoursesCache = courses;
+        document.getElementById('courseCount').textContent = courses.length;
+        const el = document.getElementById('coursesList');
+        if (!courses.length) { el.innerHTML = '<div class="empty-list">No courses yet.</div>'; return; }
+        el.innerHTML = courses.map(c => {
+          const m = c.videoUrl && c.videoUrl.match(/(?:youtu\.be\/|v=|embed\/)([a-zA-Z0-9_-]{11})/);
+          const ytId = m ? m[1] : null;
+          const thumb = ytId ? `<img class="course-thumb-sm" src="https://img.youtube.com/vi/${ytId}/default.jpg" />` : `<div class="course-thumb-placeholder"><i class="fa-solid fa-book-open"></i></div>`;
+          return `<div class="course-item">${thumb}<div class="course-info"><div class="title">${c.title}</div><div class="meta">${c.grade} &middot; ${c.subject}</div><div class="tags">${c.videoUrl?'<span class="tag has-video"><i class="fa-brands fa-youtube"></i> Video</span>':''}${c.pdfUrl?'<span class="tag has-pdf"><i class="fa-solid fa-file-pdf"></i> PDF</span>':''}</div></div><div class="course-actions"><button class="btn-edit" onclick="openEditModal('${c._id}')"><i class="fa-solid fa-pen"></i> Edit</button><button class="btn-delete" onclick="deleteCourse('${c._id}')"><i class="fa-solid fa-trash"></i> Delete</button></div></div>`;
+        }).join('');
+      } catch(e) {}
+    }
+
+    async function deleteCourse(id) {
+      if (!confirm('Delete this course?')) return;
+      await fetch(`/api/courses/${id}`, { method:'DELETE', headers:{Authorization:'Bearer '+instrToken} });
+      loadCourses();
+    }
+
+    // ── Edit Course Modal ──────────────────────────────────────
+    function openEditModal(id) {
+      const c = allCoursesCache.find(x => x._id === id);
+      if (!c) return;
+      document.getElementById('editCourseId').value      = c._id;
+      document.getElementById('editTitle').value         = c.title || '';
+      document.getElementById('editSubject').value       = c.subject || '';
+      document.getElementById('editGrade').value         = c.grade || '';
+      document.getElementById('editVideoUrl').value      = c.videoUrl || '';
+      document.getElementById('editDescription').value   = c.description || '';
+      document.getElementById('editPdfUrl').value        = c.pdfUrl || '';
+      document.getElementById('editTitleAr').value       = c.title_ar || '';
+      document.getElementById('editDescriptionAr').value = c.description_ar || '';
+      document.getElementById('editBanner').className    = 'banner';
+      document.getElementById('editModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeEditModal() {
+      document.getElementById('editModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('editModalClose').addEventListener('click', closeEditModal);
+    document.getElementById('editModal').addEventListener('click', e => { if (e.target === e.currentTarget) closeEditModal(); });
+
+    document.getElementById('editCourseForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('saveEditBtn');
+      const banner = document.getElementById('editBanner');
+      banner.className = 'banner';
+      btn.disabled = true; btn.querySelector('span').textContent = 'Saving...';
+      const id = document.getElementById('editCourseId').value;
+      const body = {
+        title: document.getElementById('editTitle').value,
+        subject: document.getElementById('editSubject').value,
+        grade: document.getElementById('editGrade').value,
+        videoUrl: document.getElementById('editVideoUrl').value,
+        description: document.getElementById('editDescription').value,
+        pdfUrl: document.getElementById('editPdfUrl').value,
+        title_ar: document.getElementById('editTitleAr').value,
+        description_ar: document.getElementById('editDescriptionAr').value,
+      };
+      try {
+        const res = await fetch(`/api/courses/${id}`, { method:'PUT', headers:{'Content-Type':'application/json', Authorization:'Bearer '+instrToken}, body:JSON.stringify(body) });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Failed to save.');
+        banner.textContent = 'Course updated successfully!'; banner.className = 'banner success';
+        loadCourses(); setTimeout(closeEditModal, 1000);
+      } catch(err) { banner.textContent = err.message; banner.className = 'banner error'; }
+      btn.disabled = false; btn.querySelector('span').textContent = 'Save Changes';
+    });
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeEditModal(); closeStudentModal(); } });
+
+    // ── Load Students ──────────────────────────────────────────
+    let allStudentsCache = [];
+
+    async function loadStudents() {
+      const el = document.getElementById('studentsList');
+      el.innerHTML = '<div class="empty-list">Loading…</div>';
+      try {
+        const res = await fetch('/api/students', { headers:{Authorization:'Bearer '+instrToken} });
+        const students = await res.json();
+        allStudentsCache = students;
+        document.getElementById('studentCount').textContent = students.length;
+        if (!students.length) { el.innerHTML = '<div class="empty-list">No registered students yet.</div>'; return; }
+        el.innerHTML = students.map(s => `
+          <div class="course-item">
+            <div class="course-thumb-placeholder"><i class="fa-solid fa-user" style="color:rgba(245,240,232,.5);font-size:1.2rem"></i></div>
+            <div class="course-info">
+              <div class="title">${s.name}</div>
+              <div class="meta">@${s.username} · ${s.grade || 'No grade'}</div>
+              <div class="tags"><span class="tag" style="border-color:rgba(74,144,226,.4);color:#4a90e2"><i class="fa-solid fa-calendar-plus"></i> ${new Date(s.createdAt).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}</span></div>
+            </div>
+            <div class="course-actions">
+              <button class="btn-edit" onclick="openStudentModal('${s._id}')"><i class="fa-solid fa-pen"></i> Edit</button>
+              <button class="btn-delete" onclick="deleteStudent('${s._id}', '${s.name}')"><i class="fa-solid fa-trash"></i> Delete</button>
+            </div>
+          </div>`).join('');
+      } catch(e) { el.innerHTML = '<div class="empty-list">Error loading students.</div>'; }
+    }
+
+    async function deleteStudent(id, name) {
+      if (!confirm(`Delete account for "${name}"? This cannot be undone.`)) return;
+      try {
+        const res = await fetch(`/api/students/${id}`, { method:'DELETE', headers:{Authorization:'Bearer '+instrToken} });
+        if (res.ok) loadStudents();
+        else alert('Failed to delete student.');
+      } catch(e) { alert('Could not reach server.'); }
+    }
+
+    // ── Edit Student Modal ─────────────────────────────────────
+    function openStudentModal(id) {
+      const s = allStudentsCache.find(x => x._id === id);
+      if (!s) return;
+      document.getElementById('editStudentId').value       = s._id;
+      document.getElementById('editStudentName').value     = s.name || '';
+      document.getElementById('editStudentUsername').value = s.username || '';
+      document.getElementById('editStudentGrade').value    = s.grade || '';
+      document.getElementById('editStudentPassword').value = '';
+      document.getElementById('editStudentBanner').className = 'banner';
+      document.getElementById('editStudentModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeStudentModal() {
+      document.getElementById('editStudentModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('editStudentModalClose').addEventListener('click', closeStudentModal);
+    document.getElementById('editStudentModal').addEventListener('click', e => { if (e.target === e.currentTarget) closeStudentModal(); });
+
+    document.getElementById('saveStudentBtn').addEventListener('click', async () => {
+      const btn    = document.getElementById('saveStudentBtn');
+      const banner = document.getElementById('editStudentBanner');
+      banner.className = 'banner';
+
+      const id       = document.getElementById('editStudentId').value;
+      const name     = document.getElementById('editStudentName').value.trim();
+      const username = document.getElementById('editStudentUsername').value.trim();
+      const grade    = document.getElementById('editStudentGrade').value;
+      const password = document.getElementById('editStudentPassword').value;
+
+      if (!name || !username) {
+        banner.textContent = 'Name and username are required.';
+        banner.className = 'banner error'; return;
+      }
+
+      btn.disabled = true; btn.querySelector('span').textContent = 'Saving...';
+      try {
+        const res = await fetch(`/api/students/${id}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + instrToken },
+          body: JSON.stringify({ name, username, grade, password }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Failed to save.');
+        banner.textContent = 'Student updated successfully!';
+        banner.className = 'banner success';
+        loadStudents();
+        setTimeout(closeStudentModal, 1000);
+      } catch(err) {
+        banner.textContent = err.message;
+        banner.className = 'banner error';
+      }
+      btn.disabled = false; btn.querySelector('span').textContent = 'Save Changes';
+    });
+  </script>
+</body>
+</html>

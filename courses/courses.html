@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Courses – Delta American Schools</title>
+
+  <!-- ── Primary Meta Tags ── -->
+  <meta name="title" content="Courses | Delta American Schools" />
+  <meta name="description" content="Access your video lessons and PDF study materials organized by grade level. Log in to your Delta American Schools student portal." />
+  <meta name="keywords"
+    content="Delta American Schools, DAS, Mansoura, international school, Egypt, American curriculum" />
+  <meta name="author" content="Delta American Schools" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yourdomain.com/PAGE-URL" />
+  
+  <!-- ── Open Graph (Facebook, WhatsApp, LinkedIn previews) ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com/PAGE-URL" />
+  <meta property="og:title" content="Courses | Delta American Schools" />
+  <meta property="og:description" content="Access your video lessons and PDF study materials organized by grade level. Log in to your Delta American Schools student portal." />
+  <meta property="og:image" content="https://yourdomain.com/pictures/Logos/logo.png" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="ar_EG" />
+  <meta property="og:site_name" content="Delta American Schools" />
+  
+  <!-- ── Twitter Card ── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Courses | Delta American Schools" />
+  <meta name="twitter:description" content="Access your video lessons and PDF study materials organized by grade level. Log in to your Delta American Schools student portal." />
+  <meta name="twitter:image" content="https://yourdomain.com/pictures/Logos/logo.png" />
+
+  <!-- Fonts (Google Fonts , Font Awesome)-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cairo:wght@400;600;700;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" />
+
+    <!-- Custom CSS & JS & i18n-->
+    <link rel="stylesheet" href="courses.css">
+    <script src="../i18n.js" defer></script>
+    <script src="courses.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <div class="header-top">
+      <hr /><span id="headerDate"></span>
+      <hr />
+    </div>
+    <div class="header-main">
+      <div class="logo">
+        <img src="/pictures/Logos/logo.png" alt="DAS" />
+        <div>
+          <h1 data-i18n="logo.name">Delta American Schools</h1>
+          <p data-i18n="coursesPage.portalLabel">Student Portal · Courses</p>
+        </div>
+      </div>
+      <div class="header-user">
+        <span class="student-name" id="studentName"></span>
+        <button id="lang-toggle" onclick="I18N.setLang(I18N.currentLang()==='en'?'ar':'en')" style="display:inline-flex;align-items:center;gap:.35rem;font-family:var(--serif);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.45rem .9rem;background:transparent;border:1px solid var(--rule);color:var(--ink);cursor:pointer;transition:all .2s;margin-right:.5rem">
+          <i class="fa-solid fa-globe"></i> عربي
+        </button>
+        <button class="logout-btn" id="logoutBtn"><i class="fa-solid fa-right-from-bracket"></i> <span data-i18n="coursesPage.logout">Logout</span></button>
+      </div>
+    </div>
+    <div class="header-bottom">
+      <hr />
+    </div>
+  </header>
+
+  <div class="page-masthead">
+    <p class="page-kicker" data-i18n="logo.name">Delta American Schools</p>
+    <h1 class="page-headline"><span data-i18n="coursesPage.masthead.headline">Your</span> <em data-i18n="coursesPage.masthead.headlineEm">Courses</em></h1>
+    <div class="m-rule">
+      <hr /><span data-i18n="coursesPage.masthead.rule">Learn · Watch · Download · Grow</span><hr />
+    </div>
+    <p class="page-deck" data-i18n="coursesPage.masthead.deck">Browse your courses by grade. Watch lessons and download PDF materials.</p>
+  </div>
+
+  <nav class="filter-bar" id="filterBar">
+    <button class="filter-btn active" data-grade="" data-i18n="coursesPage.allGrades">All Grades</button>
+  </nav>
+
+  <main id="coursesMain">
+    <div class="state" id="loadingState">
+      <div class="spinner"></div>
+      <p>Loading your courses…</p>
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-video" id="modalVideo"></div>
+      <div class="modal-body">
+        <p class="modal-subject" id="modalSubject"></p>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <p class="modal-meta" id="modalMeta"></p>
+        <p class="modal-desc" id="modalDesc"></p>
+        <a class="modal-pdf-btn" id="modalPdf" href="#" target="_blank" style="display:none">
+          <i class="fa-solid fa-file-pdf"></i> <span data-i18n="coursesPage.downloadPdf">Download PDF</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© <span id="year"></span> <span data-i18n="footer.copyright">Delta American Schools · All Rights Reserved</span></p>
+  </footer>
+</body>
+
+</html>

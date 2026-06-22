@@ -1,0 +1,460 @@
+{
+  "logo": {
+    "name": "Delta American Schools",
+    "tagline": "Est. 2011 · Mansoura, Egypt"
+  },
+  "nav": {
+    "home": "Home",
+    "aboutUs": "About Us",
+    "services": "Services",
+    "courses": "Courses",
+    "news": "News",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "admission": "Admission",
+    "apply": "Apply",
+    "bookVisit": "Book a Visit",
+    "aiChat": "AI Chat"
+  },
+  "common": {
+    "Admission": "Admission",
+    "learnMore": "Learn More",
+    "moreDetails": "More Details",
+    "readMore": "Read Full Story",
+    "services": "Services"
+  },
+  "sections": {
+    "aboutUs": "About Us",
+    "levels": "Academic Levels",
+    "whyDelta": "Why Delta Schools",
+    "gallery": "Gallery",
+    "feedback": "Parents Trust in Us",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "kicker": "Welcome to DAS",
+    "headline1": "Best Learning",
+    "headline2": "Opportunities",
+    "rule": "Education · Excellence · Future",
+    "deck": "Our goal is to build a better future for our children by improving the quality of education in Egypt."
+  },
+  "aboutUs": {
+    "caption": "Together towards a better future for our children.",
+    "headline": "Delta American Schools – Mansoura",
+    "body": "Delta American Schools in Mansoura is a leading educational institution dedicated to providing high-quality American-based education. With over 25 years of experience, the school combines global teaching standards with a supportive and inclusive learning environment.",
+    "visionTitle": "Vision",
+    "vision": "To be recognized as a center of educational excellence that inspires lifelong learning, critical thinking, and global citizenship.",
+    "missionTitle": "Mission",
+    "mission": "Our mission is to deliver an outstanding American curriculum that nurtures creativity, confidence, and character in every student.",
+    "readMore": "Read Full Story"
+  },
+  "levels": {
+    "moreDetails": "More Details",
+    "kg": {
+      "stage": "Stage I",
+      "title": "Kindergarten",
+      "excerpt": "Nurturing curiosity, creativity and early childhood development."
+    },
+    "primary": {
+      "stage": "Stage II",
+      "title": "Primary",
+      "excerpt": "Building strong academic foundations with a focus on core skills and character."
+    },
+    "prep": {
+      "stage": "Stage III",
+      "title": "Preparatory",
+      "excerpt": "Developing independent thinkers ready for the demands of secondary education."
+    },
+    "secondary": {
+      "stage": "Stage IV",
+      "title": "Secondary",
+      "excerpt": "Preparing graduates to lead with confidence in a global world."
+    }
+  },
+  "whyDelta": {
+    "intro": "We create a supportive environment that helps every child grow confidently. Delta Schools provides high quality education with modern teaching methods.",
+    "f1": {
+      "title": "Development Focus",
+      "body": "At DAS we are committed to the continuous development of the education system."
+    },
+    "f2": {
+      "title": "Education Experts",
+      "body": "DAS offers top notch instructors dedicated to delivering exceptional learning outcomes."
+    },
+    "f3": {
+      "title": "Security Focus",
+      "body": "At DAS we ensure a safe environment with cameras monitoring the campus."
+    },
+    "f4": {
+      "title": "Student Activities",
+      "body": "At DAS we offer student activities that encourage learning, creativity and teamwork."
+    },
+    "f5": {
+      "title": "International Accreditation",
+      "body": "The school is accredited by prestigious international bodies such as Cognia (formerly known as AdvancED), which ensures quality education and management standards."
+    }
+  },
+  "gallery": {
+    "viewFull": "View Full Gallery"
+  },
+  "cta": {
+    "headline": "A better future starts with",
+    "headlineSub": "the right step.",
+    "body": "Join the Delta American Schools family and give your child the education they deserve.",
+    "admission": "Admission"
+  },
+  "feedback": {
+    "intro": "Reviews & Feedback — We value the trust parents place in Delta School.",
+    "t1": {
+      "text": "The school is good. The teachers are good, and if there is a problem, we talk to the administration and it is solved.",
+      "name": "Amr Ismail",
+      "role": "Restaurant Owner"
+    },
+    "t2": {
+      "text": "I have worked here for years and I would like to tell you that this school is one of the best quality schools in Egypt. Don't hesitate to apply for your child here.",
+      "name": "Ms. Taghreed Reda",
+      "role": "Teacher"
+    }
+  },
+  "contact": {
+    "getInTouch": "Get In Touch",
+    "followUs": "Follow Us"
+  },
+  "footer": {
+    "title": "Delta American Schools",
+    "tagline": "Est. 2011 · Excellence in Education · Mansoura, Egypt",
+    "address": "Delta Academy, Highway Mansoura–Damietta, Dakahlia EG.",
+    "copyright": "Delta American Schools · All Rights Reserved",
+    "rights": "All Rights Reserved",
+    "col1": {
+      "title": "Company Info",
+      "hiring": "We Are Hiring",
+      "social": "Social Media"
+    },
+    "col2": {
+      "title": "Admins",
+      "newsStudio": "Studio News",
+      "courseStudio": "Studio Courses",
+      "dashboard": "DashBoard",
+      "customize": "Customize"
+    },
+    "col3": {
+      "title": "Features",
+      "ai": "AI Assistant",
+      "submit": "Submit Documents",
+      "visit": "Book School Visit",
+      "courses": "Courses Page"
+    }
+  },
+  "comment": {"Object" : "################### Beginning Of SubPages ###################"},
+  "sendAdmission": {
+    "title": "Send Admission Papers – Delta American Schools",
+    "kicker": "Delta American Schools",
+    "headline": "Send Admission",
+    "headlineEm": "Papers",
+    "rule": "Enrollment · 2025–2026 Academic Year",
+    "deck": "Submit your child's documents securely. Our admissions team will review your submission and contact you within 2–3 business days.",
+    "formHeader": "Admission Application",
+    "formSub": "All fields are required",
+    "nameLabel": "Full Name",
+    "namePlaceholder": "Parent / Guardian full name",
+    "emailLabel": "Email Address",
+    "phoneLabel": "Phone Number",
+    "phonePlaceholder": "+20 000 000 0000",
+    "docsLabel": "Admission Documents",
+    "dropText": "Drop file here or browse",
+    "dropHint": "PDF, ZIP or RAR — max 10 MB",
+    "submitBtn": "Submit Application",
+    "successTitle": "Application Submitted Successfully",
+    "successMsg": "Our admissions team will contact you within 2–3 business days.",
+    "errorTitle": "Submission Failed",
+    "errorMsg": "Something went wrong. Please try again."
+  },
+  "sendVisit": {
+    "title": "Book a Campus Visit – Delta American Schools",
+    "kicker": "Delta American Schools",
+    "headline": "Book a Campus",
+    "headlineEm": "Visit",
+    "rule": "Schedule · Tour · Experience",
+    "deck": "Choose your preferred date and we will confirm your appointment. Experience our classrooms, facilities, and campus environment up close.",
+    "info1": "Sun – Thu · 8:00 AM – 2:00 PM",
+    "info2": "Delta Academy, Mansoura–Damietta Hwy",
+    "info3": "+201090700727",
+    "formHeader": "Appointment Request",
+    "formSub": "We will confirm within 24 hours",
+    "nameLabel": "Full Name",
+    "phoneLabel": "Phone Number",
+    "dateLabel": "Preferred Visit Date",
+    "notesLabel": "Additional Notes",
+    "notesOptional": "(optional)",
+    "namePlaceholder": "Parent / Guardian full name",
+    "phonePlaceholder": "+20 000 000 0000",
+    "notesPlaceholder": "Any specific questions or requests…",
+    "submitBtn": "Book My Visit",
+    "successTitle": "Appointment Booked!",
+    "successMsg": "Thank you. We will contact you within 24 hours to confirm your visit."
+  },
+  "servicesPage": {
+    "masthead": {
+      "headline": "Our",
+      "headlineEm": "Services",
+      "rule": "Application · Support · Campus · AI",
+      "deck": "Choose the service that suits you — whether you want to apply, use the smart assistant, communicate with the school, or book an appointment to visit the campus."
+    },
+    "sectionLabel": "What We Offer",
+    "c1": {
+      "tag": "Application",
+      "bandLabel": "Submit Required Documents",
+      "category": "Admissions",
+      "desc": "Upload the required documents and complete your application data electronically in an organized way, with step-by-step tracking of your request status.",
+      "link": "Go to Application"
+    },
+    "c2": {
+      "tag": "AI",
+      "bandLabel": "AI Assistant",
+      "category": "Smart Support",
+      "desc": "Get instant answers to your questions about the school, regulations, curriculum, and fees through a smart assistant available to you 24/7.",
+      "link": "Try AI Assistant"
+    },
+    "c3": {
+      "tag": "Direct Contact",
+      "bandLabel": "Communication with Schools",
+      "category": "Contact & Support",
+      "desc": "Easily contact the admissions team or parent services, and get reliable official answers from school management.",
+      "link": "Go to Contact"
+    },
+    "c4": {
+      "tag": "Book Appointment",
+      "bandLabel": "Book School Visit",
+      "category": "Campus Visit",
+      "desc": "Choose the appropriate day and time to visit Delta American Schools and get to know the classrooms, activities, and educational environment up close.",
+      "link": "Book Visit"
+    }
+  },
+  "studentLogin": {
+    "portal": "Student Portal",
+    "rule": "Secure Login · Academic Year 2025–2026",
+    "cardTitle": "Student Access",
+    "cardSub": "Enter your credentials to continue",
+    "username": "Username",
+    "usernamePlaceholder": "Your username",
+    "password": "Password",
+    "passwordPlaceholder": "Your password",
+    "signIn": "Sign In",
+    "invalidCredentials": "Invalid username or password.",
+    "location": "Mansoura, Egypt"
+  },
+  "aboutPage": {
+    "masthead": {
+      "headline": "About",
+      "headlineEm": "Us",
+      "rule": "People · Journey · Excellence",
+      "deck": "Meet the founders, faculty, and students who make Delta American Schools one of Egypt's most distinguished educational institutions."
+    },
+    "founders": {
+      "title": "Our Founders",
+      "f1": {
+        "name": "Dr. Mohamed Rabie Nasser",
+        "role": "Chairman, Board of Trustees",
+        "bio": "Dr. Mohamed Rabie Nasser is a pioneer of private education in Egypt. He serves as Chairman of the Board of Trustees at Delta University for Science and Technology and is the founder of Delta Academy and Sphinx and Nile Valley Universities. He is known for his initiatives to support these efforts, most notably the Mohamed Rabie Award for Scientific Research, which recognizes outstanding researchers in the fields of medicine, technology, and artificial intelligence."
+      },
+      "f2": {
+        "name": "Dr. Ahmed Abu El-Fotouh",
+        "role": "Dean, Delta Higher Institute",
+        "bio": "Dr. Ahmed Abu El-Fotouh is an academic professor and Dean of the Delta Higher Institute for Computer Science and Management Information Systems in Mansoura. He is a key educational leader in the \"Delta\" group and is responsible for the technical and administrative supervision of the institute's engineering departments and the development of the scientific research system."
+      },
+      "f3": {
+        "name": "Maj. Gen. Dr. Abdul Wahab Al-Ra'i",
+        "role": "Security Expert & Senior Academic",
+        "bio": "Major General Dr. Abdul Wahab Al-Ra'i is a distinguished security expert and academic with a 30-year career in the Ministry of Interior, specializing in organized crime with a 99% conviction rate. A recipient of the Presidential Medal of Excellence, he now serves as a senior academic and vice-dean, and is a recognized authority on intellectual security and legal legislation."
+      }
+    },
+    "faculty": {
+      "title": "Our Faculty",
+      "kicker": "Team",
+      "headline": "Get Quality Education",
+      "deck": "Our teachers are dedicated specialists committed to nurturing the potential of every student. With their expertise and passion they create a supportive and engaging learning environment.",
+      "e1": {
+        "name": "Ms. Eman Nour",
+        "role": "Humanities Department"
+      },
+      "e2": {
+        "name": "Ms. Mona Elghobary",
+        "role": "P.E Department"
+      },
+      "e3": {
+        "name": "Ms. Haidy Elkazaz",
+        "role": "French Department"
+      },
+      "e4": {
+        "name": "Ms. Taghreed Reda",
+        "role": "Art Department"
+      }
+    },
+    "graduationTeam": {
+      "title": "Graduation Project Team",
+      "kicker": "Graduation Project Team",
+      "headline": "Get a Quality Website",
+      "deck": "These are the people who made this website possible — programmers, data analysts, and designers. These are some of our best students.",
+      "g1": {
+        "name": "Ali Mohamed",
+        "role": "Photoshop Specialist"
+      },
+      "g2": {
+        "name": "Mohamed Yaser",
+        "role": "Data Analysis"
+      },
+      "g3": {
+        "name": "Mohamed Mahmoud",
+        "role": "Software Engineering"
+      },
+      "g4": {
+        "name": "Mohamed Naser",
+        "role": "Software Engineering"
+      },
+      "g5": {
+        "name": "Mahmoud Al-Najjar",
+        "role": "Data Analysis"
+      }
+    },
+    "supervisionTeam": {
+      "title": "Supervision Team",
+      "kicker": "Faculty members",
+      "headline": "Get High Quality Supervision",
+      "deck": "These two individuals were instrumental in leading a team of 20 people to bring this graduation project and website to life in the best possible way.",
+      "g1": {
+        "name": "Ms. Angie Siam",
+        "role": "Software Engineer"
+      },
+      "g2": {
+        "name": "M. Mahmoud Khaled",
+        "role": "Software Engineer"
+      }
+    },
+    "timeline": {
+      "title": "Our Journey",
+      "kicker": "Timeline",
+      "headline": "Milestones & Achievements",
+      "deck": "Our journey began with a vision to provide quality education and has evolved into a comprehensive platform that connects students, teachers, and parents.",
+      "y2011": {
+        "title": "Foundation",
+        "body": "Delta American School (DAS) was established in Mansoura, and is part of the Delta Educational Group. It began providing its distinguished educational services in 2011. But The parent educational group was established in 1998."
+      },
+      "y2013": {
+        "title": "International Accreditation",
+        "body": "Received full accreditation from Cognia, a globally recognized education quality body."
+      },
+      "y2022": {
+        "title": "World Record",
+        "body": "Entered the Guinness Book of World Records — a historic milestone for the school."
+      },
+      "y2023": {
+        "title": "Top Academic Scores",
+        "body": "Students achieved top scores in the ACT and SAT international examinations."
+      }
+    }
+  },
+  "newsPage": {
+    "mastheadTitle": "The Daily Brief",
+    "mastheadRule": "Est. 2011 · All the news worth reading"
+  },
+  "galleryPage": {
+    "kicker": "Delta American Schools",
+    "headline": "Our",
+    "headlineEm": "Gallery",
+    "rule": "Campus · Activities · Moments · Memories",
+    "deck": "A visual chronicle of life at Delta American Schools — student activities, campus events, and the moments that define us.",
+    "sectionLabel": "School Life in Pictures",
+    "overlayRule": "Delta American Schools · Navigation",
+    "overlayFooter": "© Delta American Schools · Mansoura, Egypt"
+  },
+  "coursesPage": {
+    "portalLabel": "Student Portal · Courses",
+    "logout": "Logout",
+    "allGrades": "All Grades",
+    "downloadPdf": "Download PDF",
+    "masthead": {
+      "headline": "Your",
+      "headlineEm": "Courses",
+      "rule": "Learn · Watch · Download · Grow",
+      "deck": "Browse your courses by grade. Watch lessons and download PDF materials."
+    }
+  },
+  "admissionPage": {
+    "hero": {
+      "kicker":      "Welcome",
+      "headline":  "Delta American",
+      "headlineEm":  "Schools",
+      "rule":        "Accredited · Excellence · Future",
+      "deck":        "Accredited by the Ministry of Education and Cognia, Delta American School is known for providing high-quality education that focuses on social and emotional development.",
+      "levelsBtn":   "Academic Levels",
+      "applyBtn":    "Send Admission Papers"
+    },
+    "logos": {
+      "moe":      "Ministry of Education",
+      "guinness": "Guinness World Records",
+      "cognia":   "Cognia Accredited"
+    },
+    "levels": {
+      "sectionLabel": "Academic Levels & Fees",
+      "kgPrep":    "Pre-Kindergarten (KG Prep)",
+      "kg1":       "Kindergarten – Level 1 (KG 1)",
+      "kg2":       "Kindergarten – Level 2 (KG 2)",
+      "primary1":  "Primary Grade 1",
+      "primary2":  "Primary Grade 2",
+      "primary3":  "Primary Grade 3",
+      "primary4":  "Primary Grade 4",
+      "primary5":  "Primary Grade 5",
+      "primary6":  "Primary Grade 6",
+      "prep1":     "Preparatory Grade 1",
+      "prep2":     "Preparatory Grade 2",
+      "prep3":     "Preparatory Grade 3",
+      "secondary1":"Secondary Grade 1",
+      "secondary2":"Secondary Grade 2",
+      "secondary3":"Secondary Grade 3"
+    },
+    "additionalFees": {
+      "title":      "Additional Fees",
+      "activity":   "Activity Fees",
+      "transport":  "Transportation Fees",
+      "textbook":   "Textbook Fees",
+      "uniform":    "School Uniform Fees",
+      "appForm":    "Application Form Fees",
+      "refundable": "(Refundable if the student is not accepted)",
+      "note":       "Fees are subject to change. Contact the admissions office for the most current information."
+    },
+    "info": {
+      "sectionLabel": "Admission Information",
+      "fact1": { "title": "Admission Age",          "body": "From 3 years and 6 months" },
+      "fact2": { "title": "Application Deadline",   "body": "Applications open in February each year" },
+      "fact3": { "title": "Placement Test",         "body": "All applicants must take a placement test upon applying" },
+      "fact4": { "title": "Curriculum",             "body": "Skills-based: Common Core (Math & English), NGSS (Science)" },
+      "req": {
+        "title": "Admission Requirements for Delta American School (2026)",
+        "intro": "Delta American School follows standard procedures for international schools in Egypt, with specific requirements tailored to each academic stage. Below is a list of the essential documents and procedures required for enrollment."
+      },
+      "docs": {
+        "title": "Basic Documents",
+        "tag":   "Required for all stages",
+        "d1": { "label": "Birth Certificate:",          "body": "Original \"Computerized\" birth certificate (recent)." },
+        "d2": { "label": "Personal Photos:",            "body": "8 recent passport-sized photos of the student (white background)." },
+        "d3": { "label": "ID Copies:",                  "body": "Valid National ID copies of both parents (Father & Mother)." },
+        "d4": { "label": "Educational Qualifications:", "body": "Copies of university degrees for both parents." },
+        "d5": { "label": "Passport (For Non-Egyptians):","body": "Copies of the student's and parents' passports with a valid residency permit." }
+      },
+      "transfer": {
+        "title": "Transfer Students",
+        "t1": { "label": "Success Certificate:",      "body": "An official transcript of the last academic year, stamped by the Educational Directorate." },
+        "t2": { "label": "Student File:",             "body": "Withdrawal of the student's file from the previous school (after receiving the acceptance letter)." },
+        "t3": { "label": "Certificate of Good Conduct:", "body": "Sometimes required for Middle and High School students." }
+      },
+      "procedures": {
+        "title": "Admission Procedures",
+        "p1": { "label": "Application Form:", "body": "Fill out the form via the school's website or at the school premises." },
+        "p2": { "label": "Assessment:",       "body": "Schedule an entrance exam for the student in English, Mathematics, and Arabic." },
+        "p3": { "label": "Parent Interview:", "body": "A personal interview for the parents with the school administration." }
+      },
+      "note": "It is always recommended to contact the school's Admissions Department directly to confirm deadlines, as the school may require specific updates or additional paperwork based on new Ministry of Education regulations."
+    }
+  }
+}

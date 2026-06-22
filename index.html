@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delta American Schools</title>
+
+  <!-- ── Primary Meta Tags ── -->
+  <meta name="title" content="Home Page | Delta American Schools" />
+  <meta name="description" content="Cognia-accredited international school in Mansoura, Egypt. American curriculum from KG to Grade 12. Shaping future leaders since 2011." />
+  <meta name="keywords" content="Delta American Schools, DAS, Mansoura, international school, Egypt, American curriculum" />
+  <meta name="author" content="Delta American Schools" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yourdomain.com/PAGE-URL" />
+  
+  <!-- ── Open Graph (Facebook, WhatsApp, LinkedIn previews) ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com/PAGE-URL" />
+  <meta property="og:title" content="Home Page | Delta American Schools" />
+  <meta property="og:description" content="Cognia-accredited international school in Mansoura, Egypt. American curriculum from KG to Grade 12. Shaping future leaders since 2011." />
+  <meta property="og:image" content="https://yourdomain.com/pictures/Logos/logo.png" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="ar_EG" />
+  <meta property="og:site_name" content="Delta American Schools" />
+  
+  <!-- ── Twitter Card ── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Home Page | Delta American Schools" />
+  <meta name="twitter:description" content="Cognia-accredited international school in Mansoura, Egypt. American curriculum from KG to Grade 12. Shaping future leaders since 2011." />
+  <meta name="twitter:image" content="https://yourdomain.com/pictures/Logos/logo.png" />
+
+  <!-- Structured data for Google (Schema.org) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "School",
+      "name": "Delta American Schools",
+      "url": "https://yourdomain.com",
+      "logo": "https://yourdomain.com/pictures/Logos/logo.png",
+      "description": "Cognia-accredited international school in Mansoura, Egypt.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Delta Academy, Highway Mansoura–Damietta",
+        "addressLocality": "Mansoura",
+        "addressRegion": "Dakahlia",
+        "addressCountry": "EG"
+      },
+      "telephone": "+201090700727",
+      "email": "info@delta.edu.eg",
+      "sameAs": [
+        "https://www.facebook.com/Delta.A.S/",
+        "https://www.instagram.com/deltaamericanschool/",
+        "https://www.linkedin.com/company/delta-american-school/"
+      ]
+    }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <script src="/i18n.js" defer></script>
+</head>
+<body>
+  <main id="main">
+    <!-- ═══════════════════════════════════════════
+         HEADER / MASTHEAD
+    ═══════════════════════════════════════════ -->
+    <header>
+      <div class="header-top-rule">
+        <hr />
+        <span id="header-date"></span>
+        <hr />
+      </div>
+      <div class="header-main">
+        <div class="parent-logo">
+          <img src="pictures/Logos/logo.png" alt="Delta American Schools logo" />
+          <div class="logo-text">
+            <h1 data-i18n="logo.name">Delta American Schools</h1>
+            <p class="logo-tagline" data-i18n="logo.tagline">Est. 2011 · Mansoura, Egypt</p>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li><button id="home-btn" data-i18n="nav.home">Home</button></li>
+            <li><button id="aboutUs-btn" data-i18n="nav.aboutUs">About Us</button></li>
+            <li><button class="services-btn" data-i18n="nav.services">Services</button></li>
+            <li><button id="courses-btn" data-i18n="nav.courses">Courses</button></li>
+            <li><button id="news-btn" data-i18n="nav.news">News</button></li>
+            <li><button id="gallery-btn" data-i18n="nav.gallery">Gallery</button></li>
+            <li><button id="contactUs-btn" data-i18n="nav.contact">Contact</button></li>
+          </ul>
+        </nav>
+        <div class="parent-buttons">
+          <button id="lang-toggle" onclick="I18N.setLang(I18N.currentLang()==='en'?'ar':'en')">
+            <i class="fa-solid fa-globe"></i>
+          </button>
+          <button id="ai-chat-bot-btn" data-i18n="nav.aiChat">
+            AI Chat
+          </button>
+        </div>
+        <div class="icon_vector"><span></span><span></span><span></span></div>
+      </div>
+      <div class="header-bottom-rule">
+        <hr />
+      </div>
+    </header>
+    <!-- ═══════════════════════════════════════════
+           NAV OVERLAY (fullscreen mobile menu)
+      ═══════════════════════════════════════════ -->
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true" role="dialog" aria-label="Navigation menu">
+      <div class="overlay-rule">
+        <hr /><span>Delta American Schools · Navigation</span>
+        <hr />
+      </div>
+      <ul class="overlay-nav">
+        <li><button data-url="index.html" data-i18n="nav.home">Home</button></li>
+        <li><button data-url="aboutUs/aboutUs.html" data-i18n="nav.aboutUs">About Us</button></li>
+        <li><button data-url="services/services.html" data-i18n="nav.services">Services</button></li>
+        <li><button data-url="News/news.html" data-i18n="nav.news">News</button></li>
+        <li><button data-url="Gallery/gallery.html" data-i18n="nav.gallery">Gallery</button></li>
+        <li class="nav-divider-item">
+          <div class="nav-divider"></div>
+        </li>
+        <li><button data-url="admission/admission.html" data-i18n="nav.admission">Admission</button></li>
+        <li><button data-url="pages/send-admission-papers.html" data-i18n="nav.apply">Apply</button></li>
+        <li><button data-url="SendTheVisitAppointment/Send-to-visit.html" data-i18n="nav.bookVisit">Book a
+            Visit</button></li>
+        <li class="nav-divider-item">
+          <div class="nav-divider"></div>
+        </li>
+        <li><button data-url="courses/student-login.html" data-i18n="nav.courses">Courses</button></li>
+        <li><button data-url="my-chatbot/public/chatbot.html" data-i18n="nav.aiChat">AI Chat</button></li>
+        <li>
+          <button id="lang-toggle" onclick="I18N.setLang(I18N.currentLang()==='en'?'ar':'en')">
+            <i class="fa-solid fa-globe"></i>
+          </button>
+        </li>
+      </ul>
+      <div class="overlay-footer">© Delta American Schools · Mansoura, Egypt</div>
+    </div>
+    <!-- Scroll Down Button -->
+    <button id="nextBtn"><i class="fa-solid fa-arrow-down"></i></button>
+    <!-- ═══════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════ -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-kicker" data-i18n="hero.kicker">Welcome to DAS</div>
+        <em class="hero-headline">
+          <span data-i18n="hero.headline1">Best Learning</span><br /><em data-i18n="hero.headline2">Opportunities</em>
+          </h1>
+          <div class="hero-rule">
+            <hr />
+            <span data-i18n="hero.rule">Education · Excellence · Future</span>
+            <hr />
+          </div>
+          <p class="hero-deck" data-i18n="hero.deck">
+            Our goal is to build a better future for our children by improving
+            the quality of education in Egypt.
+          </p>
+          <div class="hero-buttons">
+            <button class="admission-btn btn-primary" data-i18n="common.Admission">Admission</button>
+            <button class="toAboutUsPage btn-secondary" data-i18n="common.learnMore">Learn More</button>
+          </div>
+      </div>
+      <div class="hero-image-frame">
+        <img src="pictures/illustrations/illustration.svg" alt="Students illustration" />
+      </div>
+
+    </section>
+    <!-- ═══════════════════════════════════════════
+         ABOUT US
+    ═══════════════════════════════════════════ -->
+    <section class="aboutUs">
+      <div class="section-masthead">
+        <div class="section-rule">
+          <hr />
+        </div>
+        <h2 class="section-label" data-i18n="sections.aboutUs">About Us</h2>
+        <div class="section-rule">
+          <hr />
+        </div>
+      </div>
+      <div class="aboutUs-grid">
+        <div class="aboutUs-image-col">
+          <div class="img-frame">
+            <img src="pictures/Gallery/gallery10.png" alt="Delta American School" />
+            <div class="img-caption">
+              <p data-i18n="aboutUs.caption">Together towards a better future for our children.</p>
+            </div>
+          </div>
+        </div>
+        <div class="aboutUs-content-col">
+          <h2 class="column-head" data-i18n="aboutUs.headline">Delta American Schools – Mansoura</h2>
+          <p class="drop-cap" data-i18n="aboutUs.body">
+            Delta American Schools in Mansoura is a leading educational
+            institution dedicated to providing high-quality American-based
+            education. With over 25 years of experience, the school combines
+            global teaching standards with a supportive and inclusive learning
+            environment.
+          </p>
+          <div class="rule-thin"></div>
+          <h3 class="sub-head" data-i18n="aboutUs.visionTitle">Vision</h3>
+          <p data-i18n="aboutUs.vision">
+            To be recognized as a center of educational excellence that
+            inspires lifelong learning, critical thinking, and global
+            citizenship.
+          </p>
+          <div class="rule-thin"></div>
+          <h3 class="sub-head" data-i18n="aboutUs.missionTitle">Mission</h3>
+          <p data-i18n="aboutUs.mission">
+            Our mission is to deliver an outstanding American curriculum that
+            nurtures creativity, confidence, and character in every student.
+          </p>
+          <button class="toAboutUsPage btn-secondary mt-2" data-i18n="aboutUs.readMore">
+            Read Full Story <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- ═══════════════════════════════════════════
+         ACADEMIC LEVELS
+    ═══════════════════════════════════════════ -->
+    <section class="AcademicLevels">
+      <div class="section-masthead">
+        <div class="section-rule">
+          <hr />
+        </div>
+        <h2 class="section-label" data-i18n="sections.levels">Academic Levels</h2>
+        <div class="section-rule">
+          <hr />
+        </div>
+      </div>
+      <div class="levels-grid">
+        <div class="level-card">
+          <div class="level-card-img"><img src="pictures/Gallery/gallery8.jpg" alt="Kindergarten" /></div>
+          <div class="level-card-body">
+            <p class="level-category" data-i18n="levels.kg.stage">Stage I</p>
+            <h4 class="level-title" data-i18n="levels.kg.title">Kindergarten</h4>
+            <p class="level-excerpt" data-i18n="levels.kg.excerpt">Nurturing curiosity, creativity and early childhood
+              development.</p>
+            <button class="admission-btn btn-link" data-i18n="common.moreDetails">More Details <i
+                class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="level-card featured-card">
+          <div class="level-card-img"><img src="pictures/Gallery/gallery7.jpg" alt="Primary" /></div>
+          <div class="level-card-body">
+            <p class="level-category" data-i18n="levels.primary.stage">Stage II</p>
+            <h4 class="level-title" data-i18n="levels.primary.title">Primary</h4>
+            <p class="level-excerpt" data-i18n="levels.primary.excerpt">Building strong academic foundations with a
+              focus on core skills and character.</p>
+            <button class="admission-btn btn-link" data-i18n="common.moreDetails">More Details <i
+                class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="level-card">
+          <div class="level-card-img"><img src="pictures/Gallery/gallery11.jpg" alt="Preparatory" /></div>
+          <div class="level-card-body">
+            <p class="level-category" data-i18n="levels.prep.stage">Stage III</p>
+            <h4 class="level-title" data-i18n="levels.prep.title">Preparatory</h4>
+            <p class="level-excerpt" data-i18n="levels.prep.excerpt">Developing independent thinkers ready for the
+              demands of secondary education.</p>
+            <button class="admission-btn btn-link" data-i18n="common.moreDetails">More Details <i
+                class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="level-card">
+          <div class="level-card-img"><img src="pictures/Gallery/gallery12.jpg" alt="Secondary" /></div>
+          <div class="level-card-body">
+            <p class="level-category" data-i18n="levels.secondary.stage">Stage IV</p>
+            <h4 class="level-title" data-i18n="levels.secondary.title">Secondary</h4>
+            <p class="level-excerpt" data-i18n="levels.secondary.excerpt">Preparing graduates to lead with confidence in
+              a global world.</p>
+            <button class="admission-btn btn-link" data-i18n="common.moreDetails">More Details <i
+                class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ═══════════════════════════════════════════
+         WHY CHOOSE US
+    ═══════════════════════════════════════════ -->
+    <section class="WhyChooseUs">
+      <div class="whychoose-inner">
+        <div class="whychoose-header">
+          <div class="section-masthead">
+            <div class="section-rule">
+              <hr />
+            </div>
+            <h2 class="section-label" data-i18n="sections.whyDelta">Why Delta Schools</h2>
+            <div class="section-rule">
+              <hr />
+            </div>
+          </div>
+          <p class="whychoose-intro" data-i18n="whyDelta.intro">
+            We create a supportive environment that helps every child grow
+            confidently. Delta Schools provides high quality education with
+            modern teaching methods.
+          </p>
+        </div>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <h4 data-i18n="whyDelta.f1.title">Development Focus</h4>
+                <div class="rule-thin"></div>
+                <p data-i18n="whyDelta.f1.body">At DAS we are committed to the continuous development of the education
+                  system.</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-user-graduate"></i></div>
+                <h4 data-i18n="whyDelta.f2.title">Education Experts</h4>
+                <div class="rule-thin"></div>
+                <p data-i18n="whyDelta.f2.body">DAS offers top notch instructors dedicated to delivering exceptional
+                  learning outcomes.</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-user-shield"></i></div>
+                <h4 data-i18n="whyDelta.f3.title">Security Focus</h4>
+                <div class="rule-thin"></div>
+                <p data-i18n="whyDelta.f3.body">At DAS we ensure a safe environment with cameras monitoring the campus.
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-person-running"></i></div>
+                <h4 data-i18n="whyDelta.f4.title">Student Activities</h4>
+                <div class="rule-thin"></div>
+                <p data-i18n="whyDelta.f4.body">At DAS we offer student activities that encourage learning, creativity
+                  and teamwork.</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="feature-card">
+                <div class="feature-icon"><i class="fa-solid fa-earth-americas"></i></div>
+                <h4 data-i18n="whyDelta.f5.title">International Accreditation</h4>
+                <div class="rule-thin"></div>
+                <p data-i18n="whyDelta.f5.body">The school is accredited by prestigious international bodies such as
+                  Cognia (formerly known as AdvancED), which ensures quality education and management standards.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ═══════════════════════════════════════════
+         GALLERY
+    ═══════════════════════════════════════════ -->
+    <section class="gallery">
+      <div class="section-masthead">
+        <div class="section-rule">
+          <hr />
+        </div>
+        <h2 class="section-label" data-i18n="sections.gallery">Gallery</h2>
+        <div class="section-rule">
+          <hr />
+        </div>
+      </div>
+      <div class="gallery-mosaic">
+        <div class="gal-item tall">
+          <img src="pictures/Gallery/gallery6.webp" alt="Gallery" />
+        </div>
+        <div class="gal-item">
+          <img src="pictures/Gallery/gallery13.jpeg" alt="Gallery" />
+        </div>
+        <div class="gal-item">
+          <img src="pictures/Gallery/gallery7.jpg" alt="Gallery" />
+        </div>
+        <div class="gal-item wide">
+          <img src="pictures/Gallery/gallery1.webp" alt="Gallery" />
+        </div>
+        <div class="gal-item">
+          <img src="pictures/Gallery/gallery4.webp" alt="Gallery" />
+        </div>
+        <div class="gal-item tall">
+          <img src="pictures/Gallery/gallery11.jpg" alt="Gallery" />
+        </div>
+        <div class="gal-item">
+          <img src="pictures/Gallery/gallery8.jpg" alt="Gallery" />
+        </div>
+        <div class="gal-item">
+          <img src="pictures/Gallery/gallery9.jpg" alt="Gallery" />
+        </div>
+      </div>
+      <div class="gallery-footer">
+        <button id="toGalleryPage" class="btn-primary" data-i18n="gallery.viewFull">
+          View Full Gallery <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </section>
+    <!-- ═══════════════════════════════════════════
+         CALL TO ACTION
+    ═══════════════════════════════════════════ -->
+    <section class="CallToAction">
+      <div class="cta-inner">
+        <div class="cta-rule">
+          <hr />
+          <span>◆</span>
+          <hr />
+        </div>
+        <h1 data-i18n="cta.headline">A better future starts with<br /><em data-i18n="cta.headlineSub">the right
+            step.</em></h1>
+        <p data-i18n="cta.body">
+          Join the Delta American Schools family and give your child the
+          education they deserve.
+        </p>
+        <div class="cta-buttons">
+          <button class="services-btn btn-primary" data-i18n="common.services">services</button>
+          <button class="admission-btn btn-secondary" data-i18n="cta.admission">
+            Admission <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+        <div class="cta-rule">
+          <hr />
+          <span>◆</span>
+          <hr />
+        </div>
+      </div>
+    </section>
+    <!-- ═══════════════════════════════════════════
+         FEEDBACK / TESTIMONIALS
+    ═══════════════════════════════════════════ -->
+    <section class="Feedback">
+      <div class="section-masthead">
+        <div class="section-rule">
+          <hr />
+        </div>
+        <h2 class="section-label" data-i18n="sections.feedback">Parents Trust in Us</h2>
+        <div class="section-rule">
+          <hr />
+        </div>
+      </div>
+      <p class="feedback-intro" data-i18n="feedback.intro">
+        Reviews &amp; Feedback — We value the trust parents place in Delta School.
+      </p>
+      <div class="feedback-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p data-i18n="feedback.t1.text">The school is good. The teachers are good, and if there is a problem, we talk
+            to the administration and it is solved.</p>
+          <div class="rule-thin"></div>
+          <div class="testimonial-author">
+            <img src="pictures/Amr.png" alt="Amr Ismail" />
+            <div>
+              <h3 data-i18n="feedback.t1.name">Amr Ismail</h3>
+              <span data-i18n="feedback.t1.role">Restaurant Owner</span>
+              <div class="stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p data-i18n="feedback.t2.text">I have worked here for years and I would like to tell you that this school is
+            one of the best quality schools in Egypt. Don't hesitate to apply for your child here.</p>
+          <div class="rule-thin"></div>
+          <div class="testimonial-author">
+            <img src="pictures/teamTeachers/Taghreed.png" alt="Ms. Taghreed Reda" />
+            <div>
+              <h3 data-i18n="feedback.t2.name">Ms. Taghreed Reda</h3>
+              <span data-i18n="feedback.t2.role">Teacher</span>
+              <div class="stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ═══════════════════════════════════════════
+         CONTACT US
+    ═══════════════════════════════════════════ -->
+    <section class="contactUs" id="contactUs">
+      <div class="section-masthead">
+        <div class="section-rule">
+          <hr />
+        </div>
+        <h2 class="section-label" data-i18n="sections.contact">Contact Us</h2>
+        <div class="section-rule">
+          <hr />
+        </div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3 class="column-head" data-i18n="contact.getInTouch">Get In Touch</h3>
+          <div class="rule-thin"></div>
+          <div class="contact-buttons">
+            <button class="phoneOne-btn contact-btn"><i class="fa-solid fa-phone"></i> +201090700727</button>
+            <button class="phoneTwo-btn contact-btn"><i class="fa-solid fa-phone"></i> +201066276898</button>
+            <button class="email-btn contact-btn"><i class="fa-solid fa-envelope"></i> info@delta.edu.eg</button>
+          </div>
+          <div class="rule-thin"></div>
+          <p class="contact-social-label" data-i18n="contact.followUs">Follow Us</p>
+          <div class="social-icons">
+            <i id="facebook-btn" class="fa-brands fa-facebook"></i>
+            <i id="instagram-btn" class="fa-brands fa-instagram"></i>
+            <i id="linkedin-btn" class="fa-brands fa-linkedin"></i>
+          </div>
+        </div>
+        <div id="map" style="height: 400px"></div>
+      </div>
+    </section>
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════ -->
+    <footer>
+      <div class="footer-masthead">
+        <hr class="footer-rule-top" />
+        <h2 class="footer-title" data-i18n="logo.name">Delta American Schools</h2>
+        <p class="footer-tagline" data-i18n="footer.tagline">
+          Est. 2011 · Excellence in Education · Mansoura, Egypt
+        </p>
+        <hr class="footer-rule-bottom" />
+      </div>
+      <section class="upper-section">
+        <div class="column">
+          <h4 data-i18n="footer.col1.title">Company Info</h4>
+          <ul>
+            <li><button id="aboutBtnFooter" data-i18n="nav.aboutUs">About Us</button></li>
+            <li><button id="servicesBtnFooter" data-i18n="nav.services">Services</button></li>
+            <li><button id="hiringBtnFooter" data-i18n="footer.col1.hiring">We Are Hiring</button></li>
+            <li><button id="socialMediaBtnFooter" data-i18n="footer.col1.social">Social Media</button></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4 data-i18n="footer.col2.title">Admins</h4>
+          <ul>
+            <li><button id="adminToPostStudioBtn" data-i18n="footer.col2.newsStudio">Studio News</button></li>
+            <li><button id="adminToCourseStudioBtn" data-i18n="footer.col2.courseStudio">Studio Courses</button></li>
+            <li><button title="Soooon" data-i18n="footer.col2.dashboard">DashBoard</button></li>
+            <li><button title="Soooon" data-i18n="footer.col2.customize">Customize</button></li>
+          </ul>
+        </div>
+        <div class="column">
+          <h4 data-i18n="footer.col3.title">Features</h4>
+          <ul>
+            <li><button id="aiBtnFooter" data-i18n="footer.col3.ai">AI Assistant</button></li>
+            <li><button id="SubmitDocumentsBtnFooter" data-i18n="footer.col3.submit">Submit Documents</button></li>
+            <li><button id="VisitBtnFooter" data-i18n="footer.col3.visit">Book School Visit</button></li>
+            <li><button id="CoursesBtnFooter" data-i18n="footer.col3.courses">Courses Page</button></li>
+          </ul>
+        </div>
+        <div class="contact">
+          <h4 data-i18n="contact.getInTouch">Get In Touch</h4>
+          <ul>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <button id="numberOneBtnFooter">+201090700727</button>
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <button id="MailBtnFooter">info@delta.edu.eg</button>
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <button id="locationBtnFooter" data-i18n="footer.address">Delta Academy, Highway Mansoura–Damietta,
+                Dakahlia EG.</button>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <div class="lower-section">
+        <p>
+          © <span id="footer-year"></span> Delta American Schools · All Rights
+          Reserved
+        </p>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

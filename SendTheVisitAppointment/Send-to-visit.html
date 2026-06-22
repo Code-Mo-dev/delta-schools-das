@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="sendVisit.title">Book a Campus Visit – Delta American Schools</title>
+
+  <!-- ── Primary Meta Tags ── -->
+  <meta name="title" content="Book a Campus Visit | Delta American Schools" />
+  <meta name="description" content="Book a campus visit at Delta American Schools in Mansoura. Schedule your tour and discover our facilities, faculty, and programs." />
+  <meta name="keywords"
+    content="Delta American Schools, DAS, Mansoura, international school, Egypt, American curriculum" />
+  <meta name="author" content="Delta American Schools" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yourdomain.com/PAGE-URL" />
+  
+  <!-- ── Open Graph (Facebook, WhatsApp, LinkedIn previews) ── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com/PAGE-URL" />
+  <meta property="og:title" content="Book a Campus Visit | Delta American Schools" />
+  <meta property="og:description" content="Book a campus visit at Delta American Schools in Mansoura. Schedule your tour and discover our facilities, faculty, and programs." />
+  <meta property="og:image" content="https://yourdomain.com/pictures/Logos/logo.png" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="ar_EG" />
+  <meta property="og:site_name" content="Delta American Schools" />
+  
+  <!-- ── Twitter Card ── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Book a Campus Visit | Delta American Schools" />
+  <meta name="twitter:description" content="Book a campus visit at Delta American Schools in Mansoura. Schedule your tour and discover our facilities, faculty, and programs." />
+  <meta name="twitter:image" content="https://yourdomain.com/pictures/Logos/logo.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+   <!-- Link -->
+  <link rel="stylesheet" href="/SendTheVisitAppointment/Send-to-visit.css" />
+</head>
+<body>
+  <div class="page-wrap">
+
+    <!-- Masthead -->
+    <div class="form-masthead">
+      <p class="form-kicker" data-i18n="sendVisit.kicker">Delta American Schools</p>
+      <h1 class="form-headline"><span data-i18n="sendVisit.headline">Book a Campus</span> <em data-i18n="sendVisit.headlineEm">Visit</em></h1>
+      <div class="masthead-rule">
+        <hr/><span data-i18n="sendVisit.rule">Schedule · Tour · Experience</span><hr/>
+      </div>
+      <p class="form-deck" data-i18n="sendVisit.deck">
+        Choose your preferred date and we will confirm your appointment.
+        Experience our classrooms, facilities, and campus environment up close.
+      </p>
+    </div>
+
+    <!-- Info Strip -->
+    <div class="info-strip">
+      <div class="info-item">
+        <i class="fa-regular fa-clock"></i>
+        <span data-i18n="sendVisit.info1">Sun – Thu · 8:00 AM – 2:00 PM</span>
+      </div>
+      <div class="info-divider"></div>
+      <div class="info-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span data-i18n="sendVisit.info2">Delta Academy, Mansoura–Damietta Hwy</span>
+      </div>
+      <div class="info-divider"></div>
+      <div class="info-item">
+        <i class="fa-solid fa-phone"></i>
+        <span data-i18n="sendVisit.info3">+201090700727</span>
+      </div>
+    </div>
+
+    <!-- Form Card -->
+    <div class="form-card">
+
+      <div class="form-card-header">
+        <i class="fa-solid fa-school-flag"></i>
+        <div>
+          <h2 data-i18n="sendVisit.formHeader">Appointment Request</h2>
+          <p data-i18n="sendVisit.formSub">We will confirm within 24 hours</p>
+        </div>
+        <div class="lang-toggle-container">
+          <button id="lang-toggle" onclick="I18N.setLang(I18N.currentLang()==='en'?'ar':'en')">
+            <i class="fa-solid fa-globe"></i> <span>EN</span>
+          </button>
+        </div>
+      </div>
+
+      <form id="visitForm" action="#" method="post">
+
+        <div class="field-group">
+          <label for="name">
+            <i class="fa-solid fa-user"></i> <span data-i18n="sendVisit.nameLabel">Full Name</span>
+          </label>
+          <input type="text" id="name" name="name" data-i18n-placeholder="sendVisit.namePlaceholder" placeholder="Parent / Guardian full name" required />
+        </div>
+
+        <div class="field-group">
+          <label for="phone">
+            <i class="fa-solid fa-phone"></i> <span data-i18n="sendVisit.phoneLabel">Phone Number</span>
+          </label>
+          <input type="tel" id="phone" name="phone" data-i18n-placeholder="sendVisit.phonePlaceholder" placeholder="+20 000 000 0000" required />
+        </div>
+
+        <div class="field-group">
+          <label for="date">
+            <i class="fa-regular fa-calendar"></i> <span data-i18n="sendVisit.dateLabel">Preferred Visit Date</span>
+          </label>
+          <input type="date" id="date" name="date" required />
+        </div>
+
+        <div class="field-group">
+          <label for="notes">
+            <i class="fa-regular fa-comment"></i> <span data-i18n="sendVisit.notesLabel">Additional Notes</span> <span class="optional" data-i18n="sendVisit.notesOptional">(optional)</span>
+          </label>
+          <textarea id="notes" name="notes" rows="3" data-i18n-placeholder="sendVisit.notesPlaceholder" placeholder="Any specific questions or requests…"></textarea>
+        </div>
+
+        <div class="form-divider"></div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          <span data-i18n="sendVisit.submitBtn">Book My Visit</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+      </form>
+
+      <div class="success-msg" id="successMessage">
+        <i class="fa-solid fa-circle-check"></i>
+        <div>
+          <strong data-i18n="sendVisit.successTitle">Appointment Booked!</strong>
+          <p data-i18n="sendVisit.successMsg">Thank you. We will contact you within 24 hours to confirm your visit.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer strip -->
+    <div class="page-footer">
+      <hr class="footer-rule"/>
+      <p>© <span id="year"></span> Delta American Schools · All Rights Reserved · Mansoura, Egypt</p>
+    </div>
+
+  </div>
+  <script>
+    const SERVER_URL = 'http://localhost:3000/send-visit';
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Set min date to today
+    const dateInput = document.getElementById('date');
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+
+    const form           = document.getElementById('visitForm');
+    const successMessage = document.getElementById('successMessage');
+    const submitBtn      = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.querySelector('span').textContent = 'Booking…';
+
+      try {
+        const res = await fetch(SERVER_URL, {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name:  document.getElementById('name').value,
+            phone: document.getElementById('phone').value,
+            date:  document.getElementById('date').value,
+            notes: document.getElementById('notes').value,
+          }),
+        });
+
+        const data = await res.json();
+
+        if (res.ok && data.success) {
+          form.style.display = 'none';
+          successMessage.classList.add('visible');
+        } else {
+          throw new Error(data.error || 'Server error. Please try again.');
+        }
+
+      } catch (err) {
+        alert(err.message);
+        submitBtn.disabled = false;
+        submitBtn.querySelector('span').textContent = 'Book My Visit';
+      }
+    });
+  </script>
+  <script src="/i18n.js" defer></script>
+</body>
+</html>
