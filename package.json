@@ -1,0 +1,10 @@
+{
+  "name": "delta-schools-das",
+  "version": "1.0.0",
+  "description": "Delta American Schools root package to trigger Node.js buildpack",
+  "private": true,
+  "scripts": {
+    "postinstall": "cd Server && npm install",
+    "start": "cd Server && node server.js"
+  }
+}
