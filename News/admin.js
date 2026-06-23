@@ -1,4 +1,4 @@
-const API = "http://localhost:3000/api";
+const API = window.location.origin + "/api";
 let authToken = sessionStorage.getItem("admin_token") || null;
 
 // ── Auto-login if token saved ──────────────────────────────────

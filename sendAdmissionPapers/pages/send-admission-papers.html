@@ -132,7 +132,7 @@
     </div>
   </div>
   <script>
-    const SERVER_URL = 'http://localhost:3000/send-admission';
+    const SERVER_URL = window.location.origin + '/send-admission';
     document.getElementById('year').textContent = new Date().getFullYear();
     document.getElementById('fileInput').addEventListener('change', function () {
       document.getElementById('fileName').textContent = this.files[0] ? '📎 ' + this.files[0].name : '';

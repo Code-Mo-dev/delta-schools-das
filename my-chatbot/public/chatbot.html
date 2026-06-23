@@ -362,7 +362,7 @@
   const welcomeEl = document.getElementById('welcome');
 
   // ⚙️ Change this to your server URL if deployed (e.g. https://yoursite.com)
-  const SERVER_URL = 'http://localhost:3000/chat';
+  const SERVER_URL = window.location.origin + '/chat';
 
   let history = [];
   let isTyping = false;
