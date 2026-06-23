@@ -134,7 +134,7 @@ const transporter = nodemailer.createTransport({
 transporter.verify().then(() => {
   console.log('✅  SMTP ready — codemo2004@gmail.com');
 }).catch(err => {
-  console.error('❌  SMTP error:', err.message);
+  console.log('⚠️  SMTP warning (non-blocking):', err.message);
 });
 
 // ─────────────────────────────────────────────────────────────
