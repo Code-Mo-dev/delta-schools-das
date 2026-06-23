@@ -127,11 +127,14 @@ const transporter = nodemailer.createTransport({
     user: 'codemo2004@gmail.com',
     pass: process.env.GMAIL_APP_PASS,
   },
+  connectionTimeout: 5000, // 5 seconds connection timeout
 });
 
-transporter.verify(err => {
-  if (err) console.error('❌  SMTP error:', err.message);
-  else     console.log('✅  SMTP ready — codemo2004@gmail.com');
+// Verify connection configuration in the background so it doesn't block server startup
+transporter.verify().then(() => {
+  console.log('✅  SMTP ready — codemo2004@gmail.com');
+}).catch(err => {
+  console.error('❌  SMTP error:', err.message);
 });
 
 // ─────────────────────────────────────────────────────────────
