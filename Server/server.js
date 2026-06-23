@@ -9,7 +9,7 @@ const cors       = require('cors');
 const path       = require('path');
 const fs         = require('fs');
 const multer     = require('multer');
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 const mongoose   = require('mongoose');
 const fetch      = require('node-fetch');
 const bcrypt     = require('bcryptjs');
@@ -117,25 +117,10 @@ const admissionUpload = multer({
 });
 
 // ─────────────────────────────────────────────────────────────
-// Nodemailer — Gmail SMTP
+// Resend — Email API (no SMTP needed)
 // ─────────────────────────────────────────────────────────────
-const transporter = nodemailer.createTransport({
-  host:   'smtp.gmail.com',
-  port:   465,
-  secure: true,
-  auth: {
-    user: 'codemo2004@gmail.com',
-    pass: process.env.GMAIL_APP_PASS,
-  },
-  connectionTimeout: 5000, // 5 seconds connection timeout
-});
-
-// Verify connection configuration in the background so it doesn't block server startup
-transporter.verify().then(() => {
-  console.log('✅  SMTP ready — codemo2004@gmail.com');
-}).catch(err => {
-  console.log('⚠️  SMTP warning (non-blocking):', err.message);
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
+console.log('✅  Resend email client initialized');
 
 // ─────────────────────────────────────────────────────────────
 // Admin auth  (News)
@@ -358,11 +343,11 @@ app.post('/send-admission', admissionUpload.single('file'), async (req, res) => 
     if (!req.file)
       return res.status(400).json({ error: 'A document file is required.' });
 
-    await transporter.sendMail({
-      from:    '"Delta American Schools Website" <codemo2004@gmail.com>',
-      to:      'codemo2004@gmail.com',
-      replyTo: email,
-      subject: `📋 New Admission Application — ${name}`,
+    const { error: sendError } = await resend.emails.send({
+      from:     'Delta American Schools <onboarding@resend.dev>',
+      to:       ['codemo2004@gmail.com'],
+      reply_to: email,
+      subject:  `📋 New Admission Application — ${name}`,
       text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nFile: ${req.file.originalname}`,
       html: `
         <div style="font-family:'Georgia',serif;max-width:600px;margin:0 auto;color:#1a1208;">
@@ -404,10 +389,11 @@ app.post('/send-admission', admissionUpload.single('file'), async (req, res) => 
       `,
       attachments: [{
         filename:    req.file.originalname,
-        content:     req.file.buffer,
-        contentType: req.file.mimetype,
+        content:     req.file.buffer.toString('base64'),
       }],
     });
+
+    if (sendError) throw new Error(sendError.message);
 
     console.log(`📧  Admission email sent — ${name} <${email}>`);
     res.status(200).json({ success: true });
@@ -432,9 +418,9 @@ app.post('/send-visit', async (req, res) => {
       weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
     });
 
-    await transporter.sendMail({
-      from:    '"Delta American Schools Website" <codemo2004@gmail.com>',
-      to:      'codemo2004@gmail.com',
+    const { error: sendError } = await resend.emails.send({
+      from:    'Delta American Schools <onboarding@resend.dev>',
+      to:      ['codemo2004@gmail.com'],
       subject: `📅 New Campus Visit Request — ${name} · ${formatted}`,
       text:    `Name: ${name}\nPhone: ${phone}\nDate: ${formatted}\nNotes: ${notes || 'None'}`,
       html: `
@@ -477,6 +463,8 @@ app.post('/send-visit', async (req, res) => {
         </div>
       `,
     });
+
+    if (sendError) throw new Error(sendError.message);
 
     console.log(`📅  Visit booking email sent — ${name}, date: ${formatted}`);
     res.status(200).json({ success: true });
