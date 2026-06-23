@@ -36,9 +36,9 @@ app.use('/uploads', express.static(UPLOADS_DIR));
 // ─────────────────────────────────────────────────────────────
 // Railway MongoDB plugin provides MONGO_URL; fall back to MONGODB_URI then local
 const MONGO_CONNECTION =
+  process.env.MONGODB_URI ||
   process.env.MONGO_URL ||
   process.env.MONGODB_URL ||
-  process.env.MONGODB_URI ||
   'mongodb://localhost:27017/dasdb';
 
 mongoose
@@ -121,8 +121,8 @@ const admissionUpload = multer({
 // ─────────────────────────────────────────────────────────────
 const transporter = nodemailer.createTransport({
   host:   'smtp.gmail.com',
-  port:   587,
-  secure: false,
+  port:   465,
+  secure: true,
   auth: {
     user: 'codemo2004@gmail.com',
     pass: process.env.GMAIL_APP_PASS,
